@@ -18,4 +18,8 @@ export default defineNuxtConfig({
   fonts: {
     provider: 'bunny'
   },
+  sourcemap: {
+    server: false,
+    client: false
+  },
 })

@@ -1,6 +1,4 @@
-# AI Vue - 桌面游戏推荐系统
-
-这是将 React TSX 代码转换为 Nuxt.js Vue 代码的桌面游戏推荐系统。
+# Board Game Store - 桌面游戏推荐系统
 
 ## 功能特性
 
@@ -13,7 +11,7 @@
 ## 项目结构
 
 ```
-aivue/
+app/
 ├── components/           # Vue 组件
 │   ├── AccordionGameList.vue    # 手风琴游戏列表
 │   ├── Breadcrumb.vue          # 面包屑导航
@@ -32,23 +30,6 @@ aivue/
 - **样式**: Tailwind CSS
 - **图标**: Heroicons
 - **类型**: TypeScript
-
-## 安装和运行
-
-1. 安装依赖：
-```bash
-npm install
-```
-
-2. 启动开发服务器：
-```bash
-npm run dev
-```
-
-3. 访问应用：
-```
-http://localhost:3000
-```
 
 ## 主要组件
 

@@ -106,7 +106,7 @@
         </div>
 
         <!-- 面包屑导航 -->
-        <BreadcrumbNav :path="navigationPath" @navigate="handleBreadcrumbNavigation" />
+        <BreadcrumbNav :path="navigationPath" :total="currentData.length" @navigate="handleBreadcrumbNavigation" />
 
         <!-- 当前选择显示 -->
         <div v-if="selectedGame" class="mb-8 text-center">

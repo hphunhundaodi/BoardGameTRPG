@@ -51,8 +51,9 @@
                     v-for="i in 5"
                     :key="i"
                     name="lucide:star"
+                    :customize="fillIcon"
                     :class="`w-4 h-4 ${i <= game.difficulty ? 'text-yellow-400 fill-yellow-400' : 'text-gray-500'}`"
-                  />
+                    />
                 </div>
               </div>
             </div>
@@ -169,6 +170,12 @@ interface GameDetails {
 interface Props {
   games: GameDetails[]
   category: string
+}
+
+// 手动设置 icon 填充
+const fillIcon = (content: string) => {
+  const filledPath = content.replace('fill="none"', 'fill="currentColor"');
+  return filledPath
 }
 
 const props = defineProps<Props>()

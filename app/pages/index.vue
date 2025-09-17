@@ -40,7 +40,7 @@
                 {{ getCategoryConfig(category).icon }}
               </div>
               <h3 class="text-3xl mb-4 group-hover:text-white transition-colors">
-                {{ category }}
+                {{ category }} {{ index === 0 ? '(敬请期待)' : '' }}
               </h3>
               <p class="text-lg text-slate-400 group-hover:text-slate-300 transition-colors">
                 {{ getCategoryConfig(category).description }}

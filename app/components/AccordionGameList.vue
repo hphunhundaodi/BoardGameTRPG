@@ -148,7 +148,7 @@
 </template>
 
 <script setup lang="ts">
-interface GameDetails {
+export interface GameDetails {
   name: string // 中文名 (展示)
   originName: string // 英文名 (小点字展示)
   description: string // 模组描述 (展示)
@@ -216,6 +216,7 @@ const getBackgroundImage = (gameType: string) => {
   const backgroundImages: Record<string, string> = {
     coc: 'https://images.unsplash.com/photo-1701791470518-cba3a91d6abd?auto=format&fit=crop&w=1080&q=80',
     dnd: 'https://images.unsplash.com/photo-1683660107861-c555be9775b9?auto=format&fit=crop&w=1080&q=80',
+    dnd5E: 'https://images.unsplash.com/photo-1683660107861-c555be9775b9?auto=format&fit=crop&w=1080&q=80',
     boardgame:
       'https://images.unsplash.com/photo-1563811771046-ba984ff30900?auto=format&fit=crop&w=1080&q=80'
   }

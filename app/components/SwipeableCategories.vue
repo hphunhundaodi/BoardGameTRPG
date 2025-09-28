@@ -120,6 +120,7 @@ interface CategoryConfig {
 interface Props {
   categories: string[]
   categoryConfig: Record<string, CategoryConfig>
+  initialIndex?: number
 }
 
 interface Emits {
@@ -129,11 +130,18 @@ interface Emits {
 const props = defineProps<Props>()
 const emit = defineEmits<Emits>()
 
-const currentIndex = ref(0)
+const currentIndex = ref(props.initialIndex || 0)
 const backgroundGradient = ref('')
 
-const currentCategory = computed(() => props.categories[currentIndex.value])
+const currentCategory = computed(() => props.categories[currentIndex.value] ?? '')
 const config = computed(() => props.categoryConfig[currentCategory.value])
+
+// 监听 initialIndex 变化
+watch(() => props.initialIndex, (newIndex) => {
+  if (newIndex !== undefined && newIndex >= 0 && newIndex < props.categories.length) {
+    currentIndex.value = newIndex
+  }
+}, { immediate: true })
 
 watch([currentIndex, () => props.categories, () => props.categoryConfig], () => {
   const gradient = props.categoryConfig[currentCategory.value]?.bgGradient || 'from-slate-900 via-purple-900/50 to-slate-900'

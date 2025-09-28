@@ -1,0 +1,55 @@
+# Node & package managers
+node_modules/
+.pnpm-store/
+.npm/
+.yarn/
+.pnp.*
+
+# Nuxt build artifacts
+.nuxt/
+.output/
+.cache/
+.dist/
+
+# Logs & diagnostics
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# OS/editor junk
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Coverage & test artifacts
+coverage/
+.nyc_output/
+.playwright/**/test-results/
+
+# Static assets built outputs
+public/*.map
+
+# Env & secrets
+.env*
+!.env.example
+
+# Locks/backups
+*.lock
+*.bak
+*.tmp
+
+# TypeScript build caches
+*.tsbuildinfo
+
+# Content cache (nuxt/content)
+.content/**
+
+# Images or large media caches
+**/*.psd
+**/*.ai
+**/*.sketch
+

@@ -1,0 +1,72 @@
+version: 1
+
+# Workspace language and framework
+project:
+  name: boardGame
+  description: Nuxt 4 + TypeScript app with @nuxt/ui, content, image
+  packageManager: pnpm
+
+# Indexing and navigation preferences
+index:
+  # Prioritize reading these files first when exploring unfamiliar code
+  entryPoints:
+    - nuxt.config.ts
+    - app/app.vue
+    - app/pages/**
+    - app/components/**
+    - composables/**
+    - content.config.ts
+  lowPriority:
+    - public/**
+    - README.md
+
+# Assistant behavior rules for this repo
+rules:
+  - id: eslint
+    description: Respect ESLint recommended rules; fix lints before concluding edits
+    match: ["**/*.{ts,tsx,vue,js,mjs}"]
+    actions:
+      - runLints: true
+      - autofixSafe: true
+
+  - id: jsx-classname
+    description: Always set a className on any new JSX/HTML element; root element in a component must have a globally unique className
+    match: ["**/*.{vue,tsx,jsx}"]
+
+  - id: translation-module
+    description: When generating a new rule/prompt, add to the global translation module: English prompt as key; Chinese value left empty if missing; reuse existing key if present
+
+  - id: nuxt-conventions
+    description: Use Nuxt 4 conventions for file-based routing, composables in ~/composables, and runtime config where appropriate
+
+# File creation templates
+templates:
+  - when: create:component
+    language: vue
+    content: |
+      <template>
+        <div class="ComponentRoot">
+        </div>
+      </template>
+      <script setup lang="ts">
+      defineProps<{}>()
+      </script>
+      <style scoped>
+      </style>
+
+# Tests and scripts
+commands:
+  - name: dev
+    run: pnpm dev
+  - name: build
+    run: pnpm build
+  - name: lint
+    run: pnpm lint || npx eslint .
+
+ignore:
+  - node_modules/**
+  - .nuxt/**
+  - .output/**
+  - coverage/**
+  - .content/**
+

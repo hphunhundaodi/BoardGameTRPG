@@ -1,6 +1,6 @@
 import {
-  CocAhei, CocYanwo, CocYuehai, CocStore,
-  DndYuehai, DndYanwo
+  CocAllModules,
+  DndAllModules,
 } from "./adventure"
 
 export const categoryRouterKey = {
@@ -196,14 +196,10 @@ export const gameDetailsData = {
   },
   跑团: {
     COC: [
-      ...CocAhei,
-      ...CocYanwo,
-      ...CocYuehai,
-      ...CocStore,
+      ...CocAllModules,
     ],
     DND: [
-      ...DndYuehai,
-      ...DndYanwo,
+      ...DndAllModules,
     ]
   }
 }

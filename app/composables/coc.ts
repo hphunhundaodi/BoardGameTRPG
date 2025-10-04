@@ -726,8 +726,31 @@ export const CocStore = [
 ]
 export const CocStoreKey = CocStore.map(el => el.name)
 
+// ======================================= 小隐KP
+export const CocXiaoyin = [
+  {
+    "name": "缅域",
+    "originName": "Myanmar",
+    "description": "",
+    "players": "4-6人",
+    "duration": "4-8h",
+    "difficulty": 2,
+    "tags": ["进阶"],
+    "era": "近代中国",
+    "requirements": "车卡",
+    "isNewbie": false,
+    "type": "coc",
+    "kp": "小隐",
+    "author": "",
+    "skills": "",
+    "notes": "",
+    "mastery": ""
+  },
+]
+export const CocXiaoyinKey = CocXiaoyin.map(el => el.name)
+
 // ======================================= 合并并排序的模组列表
-export const CocAllModules = [...CocAhei, ...CocYanwo, ...CocYuehai, ...CocStore]
+export const CocAllModules = [...CocAhei, ...CocYanwo, ...CocYuehai, ...CocStore, ...CocXiaoyin]
   .sort((a, b) => {
     // 首先按 isNewbie 排序，true 的排在前面
     if (a.isNewbie !== b.isNewbie) {

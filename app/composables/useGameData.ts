@@ -1,6 +1,7 @@
 import {
   CocAllModules,
   DndAllModules,
+  BigWorldAllModules,
 } from "./adventure"
 
 export const categoryRouterKey = {
@@ -256,6 +257,22 @@ export const categoryConfig = {
   }
 }
 
+// 全局COC类型状态
+const globalCOCType = ref<'CocAllModules' | 'BigWorldAllModules'>('CocAllModules')
+
+// COC类型状态管理
+export const useCOCType = () => {
+  const setCOCType = (type: 'CocAllModules' | 'BigWorldAllModules') => {
+    globalCOCType.value = type
+    console.log('COC类型已切换为:', type)
+  }
+  
+  return {
+    currentCOCType: globalCOCType,
+    setCOCType
+  }
+}
+
 // 游戏导航逻辑
 export const useGameNavigation = () => {
   const navigationPath = ref<string[]>([])
@@ -339,6 +356,41 @@ export const useGameNavigation = () => {
     handleBreadcrumbNavigation,
     handleGameSelect,
     getPageInfo
+  }
+}
+
+// 获取游戏数据的composable
+export const useGameData = (category: Ref<string> | string, sub: Ref<string> | string) => {
+  const { currentCOCType } = useCOCType()
+  
+  const games = computed(() => {
+    const categoryValue = unref(category)
+    const subValue = unref(sub)
+    const main = categoryValue as keyof typeof gameDetailsData
+    const subKey = subValue as keyof (typeof gameDetailsData)[typeof main]
+    
+    console.log('useGameData - category:', categoryValue, 'sub:', subValue, 'currentCOCType:', currentCOCType.value)
+    
+    // 如果是COC分类，根据选择的类型返回不同的数据
+    if (main === '跑团' && subKey === 'COC') {
+      if (currentCOCType.value === 'CocAllModules') {
+        console.log('返回经典COC数据，数量:', CocAllModules.length)
+        return CocAllModules as any[]
+      } else if (currentCOCType.value === 'BigWorldAllModules') {
+        console.log('返回大世界COC数据，数量:', BigWorldAllModules.length)
+        return BigWorldAllModules as any[]
+      }
+    }
+    
+    // 其他情况返回默认数据
+    const list = gameDetailsData[main]?.[subKey]
+    const result = Array.isArray(list) ? list : []
+    console.log('返回默认数据，数量:', result.length)
+    return result as any[]
+  })
+  
+  return {
+    games
   }
 }
 

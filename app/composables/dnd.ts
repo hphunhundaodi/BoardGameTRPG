@@ -271,6 +271,8 @@ export const DndYuehai = [
     "notes": "长度：约???次结团\n等级：???级开卡",
     "mastery": ""
   },
+  // 死亡之屋 (进阶 俩厂结束 可作为cos的前置导入)
+  // 巫光之外 前两个模组
 ]
 export const DndYuehaiKey = DndYuehai.map(el => el.name)
 

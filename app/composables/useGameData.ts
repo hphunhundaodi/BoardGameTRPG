@@ -3,6 +3,7 @@ import {
   DndAllModules,
   BigWorldAllModules,
 } from "./adventure"
+import type { GameDetails } from "@/components/AccordionGameList.vue";
 
 export const categoryRouterKey = {
   桌游: "boardgame",
@@ -375,10 +376,10 @@ export const useGameData = (category: Ref<string> | string, sub: Ref<string> | s
     if (main === '跑团' && subKey === 'COC') {
       if (currentCOCType.value === 'CocAllModules') {
         console.log('返回经典COC数据，数量:', CocAllModules.length)
-        return CocAllModules as any[]
+        return CocAllModules as GameDetails[]
       } else if (currentCOCType.value === 'BigWorldAllModules') {
         console.log('返回大世界COC数据，数量:', BigWorldAllModules.length)
-        return BigWorldAllModules as any[]
+        return BigWorldAllModules as GameDetails[]
       }
     }
     
@@ -386,7 +387,7 @@ export const useGameData = (category: Ref<string> | string, sub: Ref<string> | s
     const list = gameDetailsData[main]?.[subKey]
     const result = Array.isArray(list) ? list : []
     console.log('返回默认数据，数量:', result.length)
-    return result as any[]
+    return result as GameDetails[]
   })
   
   return {

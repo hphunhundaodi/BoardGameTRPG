@@ -1,5 +1,16 @@
 <template>
   <div class="space-y-4">
+    <!-- 搜索框 -->
+    <div class="relative flex-1">
+      <input v-model="searchQuery" type="text" placeholder="搜索模组名称"
+        class="w-full px-4 py-2 pl-9 pr-9 bg-gradient-to-br border border-red-500/30 rounded-lg text-white placeholder:text-slate-500 focus:outline-none focus:border-purple-500/50 focus:bg-black/40 transition-all" :class="colorClass">
+      <Icon name="lucide:search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
+      <button v-if="searchQuery"
+        class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 hover:text-white transition-colors"
+        @click="searchQuery = ''">
+        <Icon name="lucide:x" class="w-4 h-4" />
+      </button>
+    </div>
     <!-- COC筛选器 -->
     <div v-if="category === 'COC'" class="flex gap-4 items-stretch">
       <!-- 筛选器主体 -->
@@ -9,30 +20,12 @@
           <!-- 主筛选 + 搜索 -->
           <div class="flex gap-3">
             <!-- 主筛选按钮组 -->
-            <div class="flex gap-2">
-               <button 
-                 v-for="filter in allFilters" 
-                 :key="filter" 
-                 :class="`px-6 py-2 rounded-lg transition-all duration-300 whitespace-nowrap ${
-                   (filter === '全部' && selectedFilter === null) || selectedFilter === filter
-                     ? 'bg-gradient-to-r from-red-600 to-purple-600 text-white shadow-lg shadow-red-500/50 border'
-                     : 'bg-black/30 text-slate-300 hover:bg-black/50 hover:text-white border border-white/10'
-                 }`" 
-                 @click="setSelectedFilter(filter === '全部' ? null : filter as FilterType)"
-               >
+            <div class="flex gap-2 overflow-y-auto">
+              <button v-for="filter in allFilters" :key="filter" :class="`px-6 py-2 rounded-lg transition-all duration-300 whitespace-nowrap ${(filter === '全部' && selectedFilter === null) || selectedFilter === filter
+                ? 'bg-gradient-to-r from-red-600 to-purple-600 text-white shadow-lg shadow-red-500/50 border'
+                : 'bg-black/30 text-slate-300 hover:bg-black/50 hover:text-white border border-white/10'
+                }`" @click="setSelectedFilter(filter === '全部' ? null : filter as FilterType)">
                 {{ filter }}
-              </button>
-            </div>
-
-            <!-- 搜索框 -->
-            <div class="relative flex-1">
-              <input v-model="searchQuery" type="text" placeholder="搜索模组名称、标签..."
-                class="w-full px-4 py-2 pl-9 pr-9 bg-black/30 border border-white/10 rounded-lg text-white placeholder:text-slate-500 focus:outline-none focus:border-purple-500/50 focus:bg-black/40 transition-all">
-              <Icon name="lucide:search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
-              <button v-if="searchQuery"
-                class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 hover:text-white transition-colors"
-                @click="searchQuery = ''">
-                <Icon name="lucide:x" class="w-4 h-4" />
               </button>
             </div>
           </div>
@@ -81,7 +74,7 @@
                 </div>
 
                 <!-- 时长筛选 -->
-                <div class="space-y-2">
+                <!-- <div class="space-y-2">
                   <label class="text-xs text-slate-400">游戏时长</label>
                   <div class="grid grid-cols-3 gap-1.5">
                     <button v-for="duration in durationFilters" :key="duration" :class="`py-1.5 rounded-md text-xs transition-all duration-300 ${selectedDuration === duration
@@ -91,7 +84,7 @@
                       {{ duration.replace(/[（）]/g, '').replace('<', '<').replace('>', '>') }}
                     </button>
                   </div>
-                </div>
+                </div> -->
               </div>
             </div>
           </Transition>
@@ -100,15 +93,10 @@
 
       <!-- COC类型选择器 -->
       <div class="w-36 flex flex-col justify-between gap-3">
-        <button 
-          v-for="type in cocTypes" 
-          :key="type" 
-          :class="`h-full flex-1 px-2 py-1 rounded-xl transition-all duration-200 ${selectedCOCType === type
-            ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white border shadow-lg shadow-purple-500/50 scale-105'
-            : 'bg-gradient-to-br from-red-900/20 to-purple-900/20 border border-red-500/30 text-slate-300 hover:border-purple-500/50 hover:text-white backdrop-blur-sm'
-          }`" 
-          @click="setSelectedCOCType(type)"
-        >
+        <button v-for="type in cocTypes" :key="type" :class="`h-full flex-1 px-2 py-1 rounded-xl transition-all duration-200 ${selectedCOCType === type
+          ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white border shadow-lg shadow-purple-500/50 scale-105'
+          : 'bg-gradient-to-br from-red-900/20 to-purple-900/20 border border-red-500/30 text-slate-300 hover:border-purple-500/50 hover:text-white backdrop-blur-sm'
+          }`" @click="setSelectedCOCType(type)">
           <div class="flex items-center justify-center h-full">
             <div class="text-2xl pr-2">
               {{ type === '经典COC' ? '📜' : '🌍' }}
@@ -389,7 +377,7 @@ const filteredGames = computed(() => {
     // 主要筛选条件
     if (selectedFilter.value === "新手" && !game.isNewbie) return false
     if (selectedFilter.value === "标准" && game.isNewbie) return false  // 新增：标准模式排除新手局
-    
+
     // selectedFilter.value === null 时显示全部数据
 
     // 搜索查询

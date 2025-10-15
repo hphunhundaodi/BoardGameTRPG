@@ -1,6 +1,6 @@
 <template>
   <div v-if="path.length > 0"
-    class="flex items-center justify-between gap-2 mb-8 px-4 py-2 bg-black/20 rounded-lg border border-white/10">
+    class="flex items-center justify-between gap-2 mb-4 px-4 py-2 bg-black/20 rounded-lg border border-white/10">
     <div class="flex items-center">
       <button class="flex items-center gap-1 text-slate-400 hover:text-white transition-colors"
         @click="handleNavigate(-1)">

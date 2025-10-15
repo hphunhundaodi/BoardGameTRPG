@@ -37,24 +37,6 @@ export const BigWorldXiaoyin = [
     "mastery": ""
   },
   {
-    "name": "死光",
-    "originName": "Dead Light",
-    "description": "",
-    "players": "4-6人",
-    "duration": "3-5h",
-    "difficulty": 1,
-    "tags": [],
-    "era": "1920美国",
-    "requirements": "车卡",
-    "isNewbie": true,
-    "type": "coc",
-    "kp": "小隐",
-    "author": "",
-    "skills": "",
-    "notes": "",
-    "mastery": ""
-  },
-  {
     "name": "雪肌",
     "originName": "Snow White",
     "description": "",

@@ -2,6 +2,24 @@
 // ======================================= 月海KP
 export const DndYuehai = [
   {
+    "name": "追捕克仑可",
+    "originName": "Krenko's Way",
+    "description": "臭名昭著的鬼怪犯罪头目克仑可趁乱从乌泽监狱逃了出来。速速将他捉拿归案！",
+    "players": "3-6人",
+    "duration": "4-6h",
+    "difficulty": 1,
+    "tags": ["新人模组", "战斗居多", "事件驱动", "线性"],
+    "era": "",
+    "requirements": "车卡",
+    "isNewbie": true,
+    "type": "dnd5E",
+    "kp": "月海,小天",
+    "author": null,
+    "skills": null,
+    "notes": "长度：一次结团\n等级：一级开卡，结团升至二级",
+    "mastery": "掌握模组"
+  },
+  {
     "name": "凡达林的失落矿坑",
     "originName": "Lost Mine Of Phandelver",
     "description": "你们也许是初出茅庐的冒险者，也许是为了名利前来的野心家，也许是一个有名的矮人商人——甘德论·巡岩者的朋友，无论如何，你们都一起走上了这场探索失落的矿洞的，惊奇的冒险之旅。",
@@ -160,7 +178,7 @@ export const DndYuehai = [
     "kp": "月海",
     "author": "",
     "skills": "",
-    "notes": "模组可分为上下两部\n上:约十到十二次结团, 一到八级\n下: 约十到十二次结团, 八到十二级\n总长度：约二十一到二十三次结团\n等级：一级开卡，结团升至十五级",
+    "notes": "模组可分为上下两部\n上:约十到十二次结团, 一到八级\n下: 约十到十二次结团, 八到十五级\n总长度：约二十一到二十三次结团\n等级：一级开卡，结团升至十五级",
     "mastery": ""
   },
   {

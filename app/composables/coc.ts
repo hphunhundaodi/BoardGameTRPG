@@ -3,7 +3,7 @@ export const CocAhei = [
   {
     "name": "燃烧的星辰",
     "description": "玩家将在海地的医院苏醒，并且失去了过去一周的记忆。",
-    "players": "4-6人",
+    "players": "3-6人",
     "duration": "4h",
     "difficulty": 4,
     "tags": [],
@@ -15,7 +15,8 @@ export const CocAhei = [
     "author": null,
     "skills": null,
     "notes": null,
-    "mastery": "掌握模组"
+    "mastery": "掌握模组",
+    "weight": 0,
   },
   {
     "name": "不息的渴望",
@@ -32,7 +33,8 @@ export const CocAhei = [
     "author": null,
     "skills": null,
     "notes": null,
-    "mastery": "掌握模组"
+    "mastery": "掌握模组",
+    "weight": 0,
   },
   {
     "name": "冰冷的收获",
@@ -49,7 +51,8 @@ export const CocAhei = [
     "author": null,
     "skills": null,
     "notes": null,
-    "mastery": "掌握模组"
+    "mastery": "掌握模组",
+    "weight": -1,
   },
   {
     "name": "爱丽丝的茶话会",
@@ -66,7 +69,8 @@ export const CocAhei = [
     "author": null,
     "skills": null,
     "notes": null,
-    "mastery": "掌握模组"
+    "mastery": "掌握模组",
+    "weight": 0,
   },
   {
     "name": "狂气山脉",
@@ -83,7 +87,8 @@ export const CocAhei = [
     "author": null,
     "skills": null,
     "notes": null,
-    "mastery": "掌握模组"
+    "mastery": "掌握模组",
+    "weight": 1,
   },
   {
     "name": "刺杀小说家",
@@ -100,7 +105,8 @@ export const CocAhei = [
     "author": null,
     "skills": null,
     "notes": null,
-    "mastery": "掌握模组"
+    "mastery": "掌握模组",
+    "weight": -1,
   },
   {
     "name": "灰色画像",
@@ -117,7 +123,8 @@ export const CocAhei = [
     "author": null,
     "skills": null,
     "notes": null,
-    "mastery": "掌握模组"
+    "mastery": "掌握模组",
+    "weight": -1,
   },
   {
     "name": "溶解于黑暗之中",
@@ -134,7 +141,8 @@ export const CocAhei = [
     "author": null,
     "skills": null,
     "notes": null,
-    "mastery": "掌握模组"
+    "mastery": "掌握模组",
+    "weight": 0,
   },
 ]
 export const CocAheiKey = CocAhei.map(el => el.name)
@@ -156,7 +164,8 @@ export const CocYanwo = [
   //   "author": "湖中羊",
   //   "skills": "侦查、聆听、攀爬",
   //   "notes": "难度可调，老手新手都可以用来团建\nroll 5选1，符合高中生人设，技能上限80/60。\n【推荐意志强一点，但是弱了或许有不一样的节目效果？】",
-  //   "mastery": "掌握模组"
+  //   "mastery": "掌握模组",
+  //   "weight": 0,
   // },
   // {
   //   "name": "失衡·前几天",
@@ -173,7 +182,8 @@ export const CocYanwo = [
   //   "author": "自燃",
   //   "skills": "侦查、精神分析、交涉技能。",
   //   "notes": "非常有趣且适合新人的模组，解法多样，封闭空间。\n可携带物品必须是可以过地铁安检的东西",
-  //   "mastery": "掌握模组"
+  //   "mastery": "掌握模组",
+  //   "weight": 0,
   // },
   // {
   //   "name": "活神之手",
@@ -190,7 +200,8 @@ export const CocYanwo = [
   //   "author": "Daniel Harms",
   //   "skills": "御三家，战斗技能、体现你是一位学者的技能",
   //   "notes": "经典美模，正统coc风味\n调查员的身份必须为一位学者。",
-  //   "mastery": "掌握模组"
+  //   "mastery": "掌握模组",
+  //   "weight": 0,
   // },
   // {
   //   "name": "绯闻女孩",
@@ -207,7 +218,8 @@ export const CocYanwo = [
   //   "author": "catnico",
   //   "skills": "御三家、战斗技能（但不推荐战斗）",
   //   "notes": "国模优秀之作，难度不高，适合新手\n调查员身份必须是学校的行政人员。",
-  //   "mastery": "掌握模组"
+  //   "mastery": "掌握模组",
+  //   "weight": 0,
   // },
   // {
   //   "name": "常暗之厢",
@@ -224,7 +236,8 @@ export const CocYanwo = [
   //   "author": "3266891494",
   //   "skills": "战斗技能、御三家",
   //   "notes": "经典模组常暗之厢，新手友好，已从coc6版改为最新的7版",
-  //   "mastery": "掌握模组"
+  //   "mastery": "掌握模组",
+  //   "weight": 0,
   // },
   // {
   //   "name": "就是你了",
@@ -241,7 +254,8 @@ export const CocYanwo = [
   //   "author": "内山靖二郎",
   //   "skills": "御三家、战斗技能、交涉技能",
   //   "notes": "难度低，适合新手，开放空间\n必须为高中生，EDU必须在45-60区间内。天命5选1，或购点520。",
-  //   "mastery": "掌握模组"
+  //   "mastery": "掌握模组",
+  //   "weight": 0,
   // },
   // {
   //   "name": "内锈",
@@ -258,7 +272,8 @@ export const CocYanwo = [
   //   "author": "枫叶狐",
   //   "skills": "需要会说一口流利的法语，身手至少不赖。（但用到的技能检定很少，所以不做具体推荐）",
   //   "notes": "创意极佳，非常适合面团，推荐在跑团时做好记录\n（喜欢快速开始甚至可以不车直接玩）",
-  //   "mastery": "掌握模组"
+  //   "mastery": "掌握模组",
+  //   "weight": 0,
   // },
   // {
   //   "name": "必需品",
@@ -275,7 +290,8 @@ export const CocYanwo = [
   //   "author": "Adam",
   //   "skills": "随便点，买买买快乐XD",
   //   "notes": "适合老手团建的茶番\n提前说好pc之间的关系，要有逛商场的目的！",
-  //   "mastery": "掌握模组"
+  //   "mastery": "掌握模组",
+  //   "weight": 0,
   // },
   // {
   //   "name": "失忆恋人",
@@ -292,7 +308,8 @@ export const CocYanwo = [
   //   "author": "Fan",
   //   "skills": "侦查、聆听、攀爬、游泳、战斗技能、神秘学、英语 ",
   //   "notes": "扮演和调查难度较大（尤其是HO1），本团适合老手和熟人。【真的是正经团！！！】",
-  //   "mastery": "掌握模组"
+  //   "mastery": "掌握模组",
+  //   "weight": 0,
   // },
   // {
   //   "name": "登山裸男",
@@ -309,12 +326,13 @@ export const CocYanwo = [
   //   "author": "五千",
   //   "skills": "coc的茶番，不做具体技能推荐，不过 你们是去爬山的所以建议至少要有导航",
   //   "notes": "【是半个正经团】，本质茶番，团建聊天娱乐。",
-  //   "mastery": "掌握模组"
+  //   "mastery": "掌握模组",
+  //   "weight": 0,
   // },
   {
     "name": "黑水溪",
     "description": "黑水溪是一个位于马萨诸塞州的小镇。1926年9月下旬，正值禁酒令时期，你们因为各自的原因而来到了这里。 ",
-    "players": "4-6人",
+    "players": "3-6人",
     "duration": "6-12h",
     "difficulty": 2,
     "tags": ["美模"],
@@ -326,7 +344,8 @@ export const CocYanwo = [
     "author": "埃兰迪斯",
     "skills": "御三家、战斗",
     "notes": "经典美模，正统coc味\n模组提供了两个预设的调查员身份，分别是： 1.你是密斯卡托尼克大学的学生/教授/校内人员/相关人士，被委托前往黑水溪寻找失联的罗德斯教授夫妇； 2.你是黑帮成员/不法从业者，受一名名叫德克兰·麦克布莱德的波士顿私酒贩子的委托/命令，前往黑水溪寻找私酿酒的供货渠道。 也可以自行考虑其他身份和动机，不同身份动机可能有不同的事前情报。",
-    "mastery": "掌握模组"
+    "mastery": "掌握模组",
+    "weight": 0,
   },
   // {
   //   "name": "过年（Over Kill the festival）",
@@ -343,7 +362,8 @@ export const CocYanwo = [
   //   "author": "p82fSt2q3Q",
   //   "skills": "战斗技能很重要，其次是御三家（侦察/聆听/图书馆）",
   //   "notes": "趣味性很强的模组，难度可调。尽管模组位于封闭场景内，仍然有相当大的自由度。\n有4个HO，pc国籍不限，但外国人至少要有50点以上的中文。\n以飞机作为舞台，KP和调查员需要十分注意携带物的管理。PL需要大胆的推理，行动，以及探索。",
-  //   "mastery": "掌握模组"
+  //   "mastery": "掌握模组",
+  //   "weight": 0,
   // },
   // {
   //   "name": "火之将熄（黑魂3同人模组）",
@@ -360,7 +380,8 @@ export const CocYanwo = [
   //   "author": "日光",
   //   "skills": "战斗、交涉技能",
   //   "notes": "推荐给喜欢黑魂或者中世纪+克苏鲁世界观的人",
-  //   "mastery": "掌握模组"
+  //   "mastery": "掌握模组",
+  //   "weight": 0,
   // },
   // {
   //   "name": "猎杀之夜（血源诅咒同人模组）",
@@ -377,7 +398,8 @@ export const CocYanwo = [
   //   "author": "仮庵",
   //   "skills": "战斗技能",
   //   "notes": "推荐给喜欢《血源诅咒》和在维多利亚时代进行coc冒险的玩家",
-  //   "mastery": "掌握模组"
+  //   "mastery": "掌握模组",
+  //   "weight": 0,
   // },
   // {
   //   "name": "红舞鞋",
@@ -394,7 +416,8 @@ export const CocYanwo = [
   //   "author": "阿梅",
   //   "skills": "御三家、手枪",
   //   "notes": "线性模组，氛围佳，通关难度小，但推理难度和达成较好结局的难度并不算很低\n职业必须为日本警察",
-  //   "mastery": "掌握模组"
+  //   "mastery": "掌握模组",
+  //   "weight": 0,
   // },
   // {
   //   "name": "42",
@@ -411,7 +434,8 @@ export const CocYanwo = [
   //   "author": "Shame",
   //   "skills": "御三家、手枪",
   //   "notes": "内容十分精彩的模组，适合喜欢扮演的PL，后续可能会有的模组《怕黑》\n调查员固定职业为电台午夜节目主持人，年龄为20-30岁。",
-  //   "mastery": "掌握模组"
+  //   "mastery": "掌握模组",
+  //   "weight": 0,
   // },
 ]
 export const CocYanwoKey = CocYanwo.map(el => el.name)
@@ -421,7 +445,7 @@ export const CocYuehai = [
   {
     "name": "疯狂的艺术",
     "description": "1922年10月的一个星期三，一位伊丽莎白布什小姐联系到了你们，布什小姐请求你们帮助寻找他的兄弟迈克尔，他同时也为之前雇佣的私家侦探啊失踪而感到困惑。",
-    "players": "4-6人",
+    "players": "3-6人",
     "duration": "4-6h",
     "difficulty": 2,
     "tags": [],
@@ -433,12 +457,13 @@ export const CocYuehai = [
     "author": "",
     "skills": "",
     "notes": "",
-    "mastery": "掌握模组"
+    "mastery": "掌握模组",
+    "weight": 0,
   },
   {
     "name": "铅毒之果",
     "description": "车的燃料表出了问题，这使得调查员被困在一条偏僻的路上，最近的镇子也要几英里远，但附近就有一栋大房子，住在房子里的人或许有汽油或者甚至有电话可以向外求助。",
-    "players": "4-6人",
+    "players": "3-6人",
     "duration": "4-6h",
     "difficulty": 3,
     "tags": [],
@@ -450,13 +475,14 @@ export const CocYuehai = [
     "author": "",
     "skills": "",
     "notes": "",
-    "mastery": "掌握模组"
+    "mastery": "掌握模组",
+    "weight": 1,
   },
   {
     "name": "猩红文档",
     "description": "这个模组的事件由一场毫无预兆的死亡引发，死亡者是密斯卡托尼克大学的一名教师卡勒斯莱特教授，他死于一个奇怪的环境下并且有着侵吞和盗窃密大藏物的可能，而这可能给密大带来难以承受的丑闻。作为这所大学的一名管理者布莱斯法伦，将聘用调查员们对卡勒斯莱特的突然死亡进行调查，并且更为重要的是，对于失踪了的原本在莱特 看管下的某贵重文件进行寻找，最好是能在这文件的法定拥有者了解到这属于他的东西已经丢失了之前。",
-    "players": "4-6人",
-    "duration": "4-6h",
+    "players": "3-6人",
+    "duration": "6-8h",
     "difficulty": 3,
     "tags": ["百分百撕卡率"],
     "era": "1920美国",
@@ -467,16 +493,17 @@ export const CocYuehai = [
     "author": "",
     "skills": "",
     "notes": "",
-    "mastery": "掌握模组"
+    "mastery": "掌握模组",
+    "weight": 1,
   },
   {
     "name": "诅咒之音",
     "description": "你们抱着不同的目的来到了一家灵异事件频发的宾馆。",
-    "players": "4-6人",
+    "players": "3-6人",
     "duration": "4h",
     "difficulty": 2,
-    "tags": [],
-    "era": "1920美国",
+    "tags": ["日式"],
+    "era": "现代日本",
     "requirements": "车卡",
     "isNewbie": false,
     "type": "coc",
@@ -484,12 +511,13 @@ export const CocYuehai = [
     "author": "",
     "skills": "",
     "notes": "",
-    "mastery": "掌握模组"
+    "mastery": "掌握模组",
+    "weight": 0,
   },
   {
     "name": "复足",
     "description": "调查员受邀来到伊利诺伊州芝加哥市参加，为备受喜爱的怪奇作家哈里森·保罗·莱肯塔夫举办的为期三天的庆典，如往常一样庆典在临近芝加哥奥黑尔国际机场的曲径商业旅店举行，整个周末的内容包括：莱肯塔夫的作品讨论会、各种取材自莱肯塔夫作品的游戏以及作为压轴的粉丝自制短片首映式。",
-    "players": "4-6人",
+    "players": "3-6人",
     "duration": "6h",
     "difficulty": 2,
     "tags": ["蜘蛛"],
@@ -501,12 +529,13 @@ export const CocYuehai = [
     "author": "",
     "skills": "",
     "notes": "",
-    "mastery": "掌握模组"
+    "mastery": "掌握模组",
+    "weight": 0,
   },
   {
     "name": "无尽食欲",
     "description": "你们原本都在自己的人生轨迹上因为自己的目前而努力前进着，却因为一个共同的朋友“石泽先生”被聚集在了一起。你们并不知道发生了什么，但是都记得当时的通话内容“近来可好我的老朋友，说起来有些唐突，我知道你是一个很出色并且有能力的人，我需要你的帮助。”有些寒冷的秋风讲你们从回忆之中拉了回来，你们看着这个记忆中枯瘦的年轻人，他如今已是一副大腹便便的模样，站在饭店的门口笑盈盈的迎接着你们。究竟是什么样的事情需要这么多人才能解决，你不禁感到一阵好奇。",
-    "players": "4-6人",
+    "players": "3-6人",
     "duration": "8h+",
     "difficulty": 2,
     "tags": ["日式", "重口"],
@@ -518,8 +547,10 @@ export const CocYuehai = [
     "author": "",
     "skills": "",
     "notes": "",
-    "mastery": "掌握模组"
+    "mastery": "掌握模组",
+    "weight": 0,
   },
+  // 分解器
 ]
 export const CocYuehaiKey = CocYuehai.map(el => el.name)
 
@@ -529,7 +560,7 @@ export const CocStore = [
     "name": "孽生",
     "originName": "The Spawn",
     "description": "其调查员们到了蛮荒般的西部调查一宗谋杀案，观察阶级冲突，并发现比预期更多的恶意。",
-    "players": "4-6人",
+    "players": "3-6人",
     "duration": "8h+",
     "difficulty": 3,
     "tags": ["克苏鲁", "The Great Old Ones"],
@@ -541,13 +572,14 @@ export const CocStore = [
     "author": "",
     "skills": "",
     "notes": "",
-    "mastery": ""
+    "mastery": "",
+    "weight": 0,
   },
   {
     "name": "禁止之水",
     "originName": "Still Water",
     "description": "调查员们接了简单的任务往东边去了，在血粼粼的惨剧之中，发现所有藏书狂都是同类...",
-    "players": "4-6人",
+    "players": "3-6人",
     "duration": "6-8h",
     "difficulty": 2,
     "tags": ["克苏鲁", "The Great Old Ones"],
@@ -559,13 +591,14 @@ export const CocStore = [
     "author": "",
     "skills": "",
     "notes": "",
-    "mastery": ""
+    "mastery": "",
+    "weight": 0,
   },
   {
     "name": "告诉我, 汝是否见过黄色邪印",
     "originName": "Tell Me, Have You Seen The Yellow Sign",
     "description": "我们的英雄来到新奥尔良，追寻英勇的往昔，却被卷入恐怖的当下。",
-    "players": "4-6人",
+    "players": "3-6人",
     "duration": "???",
     "difficulty": 3,
     "tags": ["克苏鲁", "The Great Old Ones"],
@@ -577,13 +610,14 @@ export const CocStore = [
     "author": "",
     "skills": "",
     "notes": "",
-    "mastery": ""
+    "mastery": "",
+    "weight": 0,
   },
   {
     "name": "暗中来客",
     "originName": "One In Darkness",
     "description": "一个年轻的记者需要得到帮助，虽然一般而言震撼波士顿的犯罪浪潮与他毫无关系。",
-    "players": "4-6人",
+    "players": "3-6人",
     "duration": "8h+",
     "difficulty": 2,
     "tags": ["克苏鲁", "The Great Old Ones"],
@@ -595,13 +629,14 @@ export const CocStore = [
     "author": "",
     "skills": "",
     "notes": "",
-    "mastery": ""
+    "mastery": "",
+    "weight": 0,
   },
   {
     "name": "苍白的神",
     "originName": "The Pale God",
     "description": "调查员在对一所臭名昭著的农舍进行调查时，面临着一场惊心动魄的死亡。",
-    "players": "4-6人",
+    "players": "3-6人",
     "duration": "???",
     "difficulty": 3,
     "tags": ["克苏鲁", "The Great Old Ones"],
@@ -613,13 +648,14 @@ export const CocStore = [
     "author": "",
     "skills": "",
     "notes": "",
-    "mastery": ""
+    "mastery": "",
+    "weight": 0,
   },
   {
     "name": "恶月当空",
     "originName": "Bad Moon Rising",
     "description": "调查员参加了一个科学会议，懂得如何尊重恐惧，通过一次奇怪的旅程通往更加奇异的终点。",
-    "players": "4-6人",
+    "players": "3-6人",
     "duration": "???",
     "difficulty": 3,
     "tags": ["克苏鲁", "The Great Old Ones"],
@@ -631,13 +667,14 @@ export const CocStore = [
     "author": "",
     "skills": "",
     "notes": "",
-    "mastery": ""
+    "mastery": "",
+    "weight": 0,
   },
   {
     "name": "岭下暗影",
     "originName": "The Darkness Beneath the Hill",
     "description": "调查员们被他们的一位熟人，乔什·文斯考特召集在一起，后者近日在其地窖中找到了一条隧道。",
-    "players": "2-6人(可单)",
+    "players": "2-6人",
     "duration": "???",
     "difficulty": 1,
     "tags": ["幽暗之门"],
@@ -649,13 +686,14 @@ export const CocStore = [
     "author": "",
     "skills": "",
     "notes": "",
-    "mastery": ""
+    "mastery": "",
+    "weight": 0,
   },
   {
     "name": "哈索恩山",
     "originName": "Genius Loci",
     "description": "绝望的呼救与平静的拒绝，竟出自同一人之口。\n当挚友同时向你传递极致的恐惧与诡异的安宁，你意识到——有些真相，必须亲自揭开。",
-    "players": "2-6人(可单)",
+    "players": "2-6人",
     "duration": "???",
     "difficulty": 1,
     "tags": ["幽暗之门"],
@@ -667,7 +705,8 @@ export const CocStore = [
     "author": "",
     "skills": "",
     "notes": "",
-    "mastery": ""
+    "mastery": "",
+    "weight": 0,
   },
   {
     "name": "湖之仆从",
@@ -685,7 +724,8 @@ export const CocStore = [
     "author": "",
     "skills": "",
     "notes": "",
-    "mastery": ""
+    "mastery": "",
+    "weight": 0,
   },
   {
     "name": "血浓于水",
@@ -703,14 +743,15 @@ export const CocStore = [
     "author": "",
     "skills": "",
     "notes": "",
-    "mastery": ""
+    "mastery": "",
+    "weight": 0,
   },
   {
     "name": "了却幻梦",
     "originName": "None more Black",
     "description": "密斯卡托尼克大学学生死亡事件，事件背后另有邪恶交易？！",
     "players": "2-6人",
-    "duration": "???",
+    "duration": "4-8h",
     "difficulty": 2,
     "tags": ["幽暗之门"],
     "era": "1920美国,密大",
@@ -721,7 +762,8 @@ export const CocStore = [
     "author": "",
     "skills": "",
     "notes": "",
-    "mastery": ""
+    "mastery": "",
+    "weight": 1,
   },
 ]
 export const CocStoreKey = CocStore.map(el => el.name)
@@ -732,7 +774,7 @@ export const CocXiaoyin = [
     "name": "缅域",
     "originName": "Myanmar",
     "description": "",
-    "players": "4-6人",
+    "players": "3-6人",
     "duration": "4-8h",
     "difficulty": 1,
     "tags": ["进阶"],
@@ -744,13 +786,14 @@ export const CocXiaoyin = [
     "author": "",
     "skills": "",
     "notes": "",
-    "mastery": ""
+    "mastery": "",
+    "weight": -1,
   },
   {
     "name": "死光",
     "originName": "Dead Light",
     "description": "1920年夏夜，你们驱车前往波士顿。暴雨骤至，车灯前隐约照出道路尽头一点昏暗的灯火。那或许是唯一的避雨处。",
-    "players": "4-6人",
+    "players": "3-6人",
     "duration": "3-5h",
     "difficulty": 1,
     "tags": ["新手本"],
@@ -762,13 +805,14 @@ export const CocXiaoyin = [
     "author": "Alan Bligh",
     "skills": "",
     "notes": "",
-    "mastery": ""
+    "mastery": "",
+    "weight": 0,
   },
   {
-    "name": "无光灯塔",
+    "name": "无光的灯塔",
     "originName": "The Lightless Beacon",
     "description": "航标岛灯塔的意外熄灭，令你们的航船触礁沉没。此刻，你们正乘着一叶小舟，在暴风雨中驶向那座黑暗的灯塔寻求庇护。然而，灯塔中等待你们的并非安全，而是一场深入未知恐怖的冒险。",
-    "players": "4-6人",
+    "players": "3-6人",
     "duration": "3-5h",
     "difficulty": 1,
     "tags": ["新手本"],
@@ -780,7 +824,8 @@ export const CocXiaoyin = [
     "author": "Leigh Carr, Lynne Hardy",
     "skills": "",
     "notes": "",
-    "mastery": ""
+    "mastery": "",
+    "weight": 0,
   },
 ]
 export const CocXiaoyinKey = CocXiaoyin.map(el => el.name)
@@ -788,10 +833,29 @@ export const CocXiaoyinKey = CocXiaoyin.map(el => el.name)
 // ======================================= 合并并排序的模组列表
 export const CocAllModules = [...CocAhei, ...CocYanwo, ...CocYuehai, ...CocStore, ...CocXiaoyin]
   .sort((a, b) => {
-    // 首先按 isNewbie 排序，true 的排在前面
+    // 先排新手
+    // 第一优先级：isNewbie (true 在前) 
     if (a.isNewbie !== b.isNewbie) {
       return a.isNewbie ? -1 : 1
     }
-    // 然后按 difficulty 从小到大排序
+    
+    // 第二优先级：权重 (有值且数值大的在前)
+    if (a.weight !== b.weight) {
+      // 如果都有权重，按权重降序
+      if (a.weight !== null && b.weight !== null) {
+        return b.weight - a.weight
+      }
+      // 只有一个有权重，有权重的在前
+      if (a.weight !== null) return -1
+      if (b.weight !== null) return 1
+    }
+    
+    // 第三优先级：难度 (数值小的在前)
     return a.difficulty - b.difficulty
   })
+// 排序的改一下
+  
+// 上一些双人模组 纯新手开 车卡和跑团分开收费
+// 追书人
+
+// 有合集的模组 用合集名归类

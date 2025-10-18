@@ -16,7 +16,8 @@ export const BigWorldXiaoyin = [
     "author": "",
     "skills": "",
     "notes": "",
-    "mastery": ""
+    "mastery": "掌握模组",
+    "weight": 0,
   },
   {
     "name": "古树林中",
@@ -34,7 +35,8 @@ export const BigWorldXiaoyin = [
     "author": "",
     "skills": "",
     "notes": "",
-    "mastery": ""
+    "mastery": "掌握模组",
+    "weight": 0,
   },
   {
     "name": "雪肌",
@@ -52,7 +54,8 @@ export const BigWorldXiaoyin = [
     "author": "",
     "skills": "",
     "notes": "",
-    "mastery": ""
+    "mastery": "掌握模组",
+    "weight": 0,
   },
   {
     "name": "猩红文档",
@@ -70,7 +73,8 @@ export const BigWorldXiaoyin = [
     "author": "",
     "skills": "",
     "notes": "",
-    "mastery": ""
+    "mastery": "掌握模组",
+    "weight": 0,
   },
   {
     "name": "鲜花与灰烬",
@@ -88,7 +92,8 @@ export const BigWorldXiaoyin = [
     "author": "",
     "skills": "",
     "notes": "",
-    "mastery": ""
+    "mastery": "掌握模组",
+    "weight": 0,
   },
   {
     "name": "星之彩·远航",
@@ -106,7 +111,8 @@ export const BigWorldXiaoyin = [
     "author": "",
     "skills": "",
     "notes": "",
-    "mastery": ""
+    "mastery": "掌握模组",
+    "weight": 0,
   },
 ]
 export const BigWorldXiaoyinKey = BigWorldXiaoyin.map(el => el.name)

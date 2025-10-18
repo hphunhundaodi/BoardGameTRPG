@@ -2,8 +2,8 @@
   <div class="space-y-4">
     <!-- 搜索框 -->
     <div class="relative flex-1">
-      <input v-model="searchQuery" type="text" placeholder="搜索模组名称"
-        class="w-full px-4 py-2 pl-9 pr-9 bg-gradient-to-br border border-red-500/30 rounded-lg text-white placeholder:text-slate-500 focus:outline-none focus:border-purple-500/50 focus:bg-black/40 transition-all" :class="colorClass">
+      <input v-model="searchQuery" type="text" placeholder="搜索模组中英文名、特色标签"
+        :class="`w-full px-4 py-2 pl-9 pr-9 bg-gradient-to-br border ${colorClass} rounded-lg text-white placeholder:text-slate-500 focus:outline-none focus:border-purple-500/50 focus:bg-black/40 transition-all`">
       <Icon name="lucide:search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
       <button v-if="searchQuery"
         class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 hover:text-white transition-colors"
@@ -253,6 +253,7 @@ export interface GameDetails {
   skills: string // 模组推荐技能 (展示)
   notes: string // 备注 (展示)
   mastery: string // 主持人是否掌握该模组 (不展示)
+  weight: number // 模组权重 (不展示)
 }
 
 interface Props {
@@ -282,7 +283,7 @@ const showAdvancedFilters = ref(false)
 
 // 筛选选项
 const filters: FilterType[] = ["新手", "标准"]
-const durationFilters = ["短（<4h）", "中（4-6h）", "长（>6h）"]
+// const durationFilters = ["短（<4h）", "中（4-6h）", "长（>6h）"]
 
 // 添加"全部"选项
 const allFilters = ["全部", ...filters]
@@ -369,9 +370,9 @@ const parseDuration = (duration: string): number => {
 
 // 筛选逻辑
 const filteredGames = computed(() => {
-  if (props.category !== "COC") {
-    return props.games
-  }
+  // if (props.category !== "COC") {
+  //   return props.games
+  // }
 
   return props.games.filter(game => {
     // 主要筛选条件
@@ -385,9 +386,10 @@ const filteredGames = computed(() => {
       const query = searchQuery.value.toLowerCase()
       const matchesName = game.name.toLowerCase().includes(query)
       const matchesOriginName = game.originName?.toLowerCase().includes(query) || false
-      const matchesDescription = game.description.toLowerCase().includes(query)
+      // const matchesDescription = game.description.toLowerCase().includes(query) // 这还有匹配描述的 暂时不要
       const matchesTags = game.tags.some(tag => tag.toLowerCase().includes(query))
-      if (!matchesName && !matchesOriginName && !matchesDescription && !matchesTags) {
+      //  && !matchesDescription
+      if (!matchesName && !matchesOriginName && !matchesTags) {
         return false
       }
     }
@@ -419,9 +421,9 @@ const setSelectedDifficulty = (level: number) => {
   selectedDifficulty.value = selectedDifficulty.value === level ? null : level
 }
 
-const setSelectedDuration = (duration: string) => {
-  selectedDuration.value = selectedDuration.value === duration ? "" : duration
-}
+// const setSelectedDuration = (duration: string) => {
+//   selectedDuration.value = selectedDuration.value === duration ? "" : duration
+// }
 
 // 清除所有筛选
 const clearAllFilters = () => {

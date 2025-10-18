@@ -17,7 +17,8 @@ export const DndYuehai = [
     "author": null,
     "skills": null,
     "notes": "长度：一次结团\n等级：一级开卡，结团升至二级",
-    "mastery": "掌握模组"
+    "mastery": "掌握模组",
+    "weight": 0,
   },
   {
     "name": "凡达林的失落矿坑",
@@ -35,7 +36,8 @@ export const DndYuehai = [
     "author": null,
     "skills": null,
     "notes": "长度：约五次结团\n等级：一级开卡，结团升至五级",
-    "mastery": "掌握模组"
+    "mastery": "掌握模组",
+    "weight": 0,
   },
   {
     "name": "风骸岛之龙",
@@ -53,7 +55,8 @@ export const DndYuehai = [
     "author": null,
     "skills": null,
     "notes": "长度：约四次结团\n等级：一级开卡，结团升至三级",
-    "mastery": "掌握模组"
+    "mastery": "掌握模组",
+    "weight": 0,
   },
   {
     "name": "冰塔峰之龙",
@@ -71,7 +74,8 @@ export const DndYuehai = [
     "author": null,
     "skills": null,
     "notes": "长度：约五次结团\n等级：一级开卡，结团升至六级",
-    "mastery": "掌握模组"
+    "mastery": "掌握模组",
+    "weight": 0,
   },
   {
     "name": "十镇冬日",
@@ -89,7 +93,8 @@ export const DndYuehai = [
     "author": null,
     "skills": null,
     "notes": "长度：约1次结团\n等级：二级开卡\n非常适合衔接《冰风谷:冰霜少女的雾凇》",
-    "mastery": "掌握模组"
+    "mastery": "掌握模组",
+    "weight": 0,
   },
   {
     "name": "深水城-龙金之劫",
@@ -107,7 +112,8 @@ export const DndYuehai = [
     "author": "",
     "skills": "",
     "notes": "长度：约五次结团\n等级：一级开卡，结团升至五级",
-    "mastery": ""
+    "mastery": "",
+    "weight": 0,
   },
   {
     "name": "深水城-疯法师的地城",
@@ -125,7 +131,8 @@ export const DndYuehai = [
     "author": "",
     "skills": "",
     "notes": "长度：每层约1~2次，共23层\n等级：5~20级",
-    "mastery": ""
+    "mastery": "",
+    "weight": 0,
   },
   {
     "name": "施特拉德的诅咒",
@@ -143,7 +150,8 @@ export const DndYuehai = [
     "author": null,
     "skills": null,
     "notes": "长度：约十三到十五次结团\n等级：一级开卡，结团升至十级",
-    "mastery": ""
+    "mastery": "",
+    "weight": 0,
   },
   {
     "name": "冰风谷:冰霜少女的雾凇",
@@ -161,7 +169,8 @@ export const DndYuehai = [
     "author": "",
     "skills": "",
     "notes": "长度：约二十一到二十三次结团\n等级：一级开卡，结团升至十二级",
-    "mastery": ""
+    "mastery": "",
+    "weight": 0,
   },
   {
     "name": "逃离深渊",
@@ -179,7 +188,8 @@ export const DndYuehai = [
     "author": "",
     "skills": "",
     "notes": "模组可分为上下两部\n上:约十到十二次结团, 一到八级\n下: 约十到十二次结团, 八到十五级\n总长度：约二十一到二十三次结团\n等级：一级开卡，结团升至十五级",
-    "mastery": ""
+    "mastery": "",
+    "weight": 0,
   },
   {
     "name": "暗无天日",
@@ -197,7 +207,8 @@ export const DndYuehai = [
     "author": "BruceR Cordell",
     "skills": "",
     "notes": "等级：一级开卡，结团升至三级",
-    "mastery": ""
+    "mastery": "",
+    "weight": 0,
   },
   {
     "name": "愤怒熔炉",
@@ -215,7 +226,8 @@ export const DndYuehai = [
     "author": "Richard Baker",
     "skills": "",
     "notes": "等级：三级级开卡，结团升至五级",
-    "mastery": ""
+    "mastery": "",
+    "weight": 0,
   },
   {
     "name": "塔莫肯秘殿",
@@ -233,7 +245,8 @@ export const DndYuehai = [
     "author": "Harold Johnson & Jeff R Leason",
     "skills": "",
     "notes": "等级：五级开卡",
-    "mastery": ""
+    "mastery": "",
+    "weight": 0,
   },
   {
     "name": "白羽山",
@@ -251,7 +264,8 @@ export const DndYuehai = [
     "author": "Lawrencs Schick",
     "skills": "",
     "notes": "等级：八级开卡",
-    "mastery": ""
+    "mastery": "",
+    "weight": 0,
   },
   {
     "name": "死于塞尔",
@@ -269,7 +283,8 @@ export const DndYuehai = [
     "author": "Scott Fitzgerald Gray",
     "skills": "",
     "notes": "等级：九到十一级开卡",
-    "mastery": ""
+    "mastery": "",
+    "weight": 0,
   },
   {
     "name": "巨人之战",
@@ -287,7 +302,8 @@ export const DndYuehai = [
     "author": "Scott Fitzgerald Gray",
     "skills": "",
     "notes": "等级：十一级开卡",
-    "mastery": ""
+    "mastery": "",
+    "weight": 0,
   },
   {
     "name": "恐怖之墓",
@@ -305,7 +321,8 @@ export const DndYuehai = [
     "author": "加里·吉加克斯",
     "skills": "",
     "notes": "长度：约???次结团\n等级：???级开卡",
-    "mastery": ""
+    "mastery": "",
+    "weight": 0,
   },
   // 死亡之屋 (进阶 俩厂结束 可作为cos的前置导入)
   // 巫光之外 前两个模组
@@ -329,7 +346,8 @@ export const DndYanwo = [
     "author": " Mads Hvelplund",
     "skills": "",
     "notes": "dnd入门团，推荐给新手，后续可以衔接其他模组\n本模组不设补给点，但pc可以在正式开团之前用初始资金进行采购。\n短团，欢迎多多rp，欢迎合理搞事。 可能会有的后续模组：【魔现封神】。\n长度：一次结团\n等级：一级开卡",
-    "mastery": "掌握模组"
+    "mastery": "掌握模组",
+    "weight": 0,
   },
   // {
   //   "name": "暗无天日",
@@ -346,7 +364,8 @@ export const DndYanwo = [
   //   "author": null,
   //   "skills": "",
   //   "notes": "dnd入门团，推荐给新手，后续可以衔接其他模组\n长度：约一到二次结团\n等级：一级开卡，最终达到二级甚至三级",
-  //   "mastery": "掌握模组"
+  //   "mastery": "掌握模组",
+  //   "weight": 0,
   // },
   {
     "name": "林中魅影",
@@ -363,7 +382,8 @@ export const DndYanwo = [
     "author": null,
     "skills": "",
     "notes": "身份：你可以是朽木镇本地人，可以是正巧旅行到这里的旅者，也可以是镇长从城里找来的雇佣兵……。5级开卡，全拓展，可以有三个非普通物品（+1武器和+1防具也是非普通）+1治疗药水+3天的干粮+一些身份有关的个人物品\n等级：五级开卡，适合老手",
-    "mastery": "掌握模组"
+    "mastery": "掌握模组",
+    "weight": 0,
   },
 ]
 export const DndYanwoKey = DndYanwo.map(el => el.name)

@@ -114,6 +114,14 @@ export const BigWorldXiaoyin = [
     "mastery": "掌握模组",
     "weight": 0,
   },
+  // ======================================= 需要购买的模组
+  // 古树林中
+  // 雪肌
+  // 猩红文档
+  // 鲜花与灰烬
+  // 尊王将至
+  // 艺术的启示
+  // 岸上星辰
 ]
 export const BigWorldXiaoyinKey = BigWorldXiaoyin.map(el => el.name)
 

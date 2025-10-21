@@ -265,7 +265,6 @@ const globalCOCType = ref<'CocAllModules' | 'BigWorldAllModules'>('CocAllModules
 export const useCOCType = () => {
   const setCOCType = (type: 'CocAllModules' | 'BigWorldAllModules') => {
     globalCOCType.value = type
-    console.log('COC类型已切换为:', type)
   }
   
   return {
@@ -370,15 +369,11 @@ export const useGameData = (category: Ref<string> | string, sub: Ref<string> | s
     const main = categoryValue as keyof typeof gameDetailsData
     const subKey = subValue as keyof (typeof gameDetailsData)[typeof main]
     
-    console.log('useGameData - category:', categoryValue, 'sub:', subValue, 'currentCOCType:', currentCOCType.value)
-    
     // 如果是COC分类，根据选择的类型返回不同的数据
     if (main === '跑团' && subKey === 'COC') {
       if (currentCOCType.value === 'CocAllModules') {
-        console.log('返回经典COC数据，数量:', CocAllModules.length)
         return CocAllModules as GameDetails[]
       } else if (currentCOCType.value === 'BigWorldAllModules') {
-        console.log('返回大世界COC数据，数量:', BigWorldAllModules.length)
         return BigWorldAllModules as GameDetails[]
       }
     }
@@ -386,7 +381,6 @@ export const useGameData = (category: Ref<string> | string, sub: Ref<string> | s
     // 其他情况返回默认数据
     const list = gameDetailsData[main]?.[subKey]
     const result = Array.isArray(list) ? list : []
-    console.log('返回默认数据，数量:', result.length)
     return result as GameDetails[]
   })
   

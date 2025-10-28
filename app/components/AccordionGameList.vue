@@ -139,6 +139,16 @@
         </button>
       </div>
     </div>
+    
+    <div v-if="currentCOCType === 'BigWorldAllModules'">
+      <div class="font-bold pb-2">【关于“大世界COC”模式的说明】</div>
+      <div class="">
+        <div>亲爱的玩家，您关注的“大世界”模式是我们为您准备的特色体验。</div>
+        <div>它与固定剧本不同，无需预先车卡，故事将根据您队伍的行程、选择与阵营实时展开。</div>
+        <div>正因如此，它没有固定的故事简介 —— 您的冒险本身就是独一无二的传奇。</div>
+        <div>我们相信，这种未知与高自由度，将为您带来无与伦比的沉浸感。</div>
+      </div>
+    </div>
 
     <!-- 游戏列表 -->
     <div class="space-y-4">

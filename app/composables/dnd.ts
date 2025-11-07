@@ -411,8 +411,51 @@ export const DndYanwo = [
 ]
 export const DndYanwoKey = DndYanwo.map(el => el.name)
 
+// ======================================= 六KP
+export const DndLiu = [
+  {
+    "name": "苍白女王的勇士",
+    "originName": "无",
+    "description": "在野外的旅途，面前的道路被商队的马车堵死了，看起来还有人群聚集，发生了什么？",
+    "players": "3-6人",
+    "duration": "4-6h",
+    "difficulty": 1,
+    "tags": ["新手适宜", "社交", "战斗", "等级可变动"],
+    "era": "",
+    "requirements": "车卡",
+    "isNewbie": true,
+    "type": "dnd5E",
+    "kp": "6",
+    "author": null,
+    "skills": null,
+    "notes": "长度：单次团，1/3/5级开卡",
+    "mastery": "掌握模组",
+    "weight": 0,
+  },
+  {
+    "name": "枯木哀歌",
+    "originName": "无",
+    "description": "尊敬的冒险者大人，求求你们，我的父亲在和我们一起伐木的时候被妖物掳走了，就在迷雾森林附近，求求你们救救他！",
+    "players": "3-6人",
+    "duration": "4-6h",
+    "difficulty": 1,
+    "tags": ["新手适宜", "社交", "战斗", "冒险中升级"],
+    "era": "",
+    "requirements": "车卡",
+    "isNewbie": true,
+    "type": "dnd5E",
+    "kp": "6",
+    "author": null,
+    "skills": null,
+    "notes": "长度：单次团，1/3/5级开卡",
+    "mastery": "掌握模组",
+    "weight": 0,
+  },
+]
+export const DndLiuKey = DndLiu.map(el => el.name)
+
 // ======================================= 合并并排序的模组列表
-export const DndAllModules = [...DndYuehai, ...DndYanwo]
+export const DndAllModules = [...DndYuehai, ...DndYanwo, ...DndLiu]
   .sort((a, b) => {
     // 首先按 isNewbie 排序，true 的排在前面
     if (a.isNewbie !== b.isNewbie) {

@@ -1,44 +1,3 @@
-// ======================================= 阿黑KP
-export const CocAhei = [
-  {
-    "name": "燃烧的星辰",
-    "description": "玩家将在海地的医院苏醒，并且失去了过去一周的记忆。",
-    "players": "3-6人",
-    "duration": "4h",
-    "difficulty": 4,
-    "tags": [],
-    "era": "1930海地",
-    "requirements": "预设卡",
-    "isNewbie": false,
-    "type": "coc",
-    "kp": "月海,小隐",
-    "author": null,
-    "skills": null,
-    "notes": null,
-    "mastery": "掌握模组",
-    "weight": 0,
-  },
-  {
-    "name": "狂气山脉",
-    "description": "玩家将扮演攀登者，目标是征服一座最新发现的山峰。",
-    "players": "4人",
-    "duration": "4h+",
-    "difficulty": 2,
-    "tags": [],
-    "era": "2012现代",
-    "requirements": "车卡",
-    "isNewbie": false,
-    "type": "coc",
-    "kp": "月海,小隐",
-    "author": null,
-    "skills": null,
-    "notes": null,
-    "mastery": "掌握模组",
-    "weight": 1,
-  },
-]
-export const CocAheiKey = CocAhei.map(el => el.name)
-
 // ======================================= 燕窝KP
 export const CocYanwo = [
   // {
@@ -328,7 +287,44 @@ export const CocYanwo = [
   //   "notes": "内容十分精彩的模组，适合喜欢扮演的PL，后续可能会有的模组《怕黑》\n调查员固定职业为电台午夜节目主持人，年龄为20-30岁。",
   //   "mastery": "掌握模组",
   //   "weight": 0,
+  // },  
+  // {
+  //   "name": "燃烧的星辰",
+  //   "description": "玩家将在海地的医院苏醒，并且失去了过去一周的记忆。",
+  //   "players": "3-6人",
+  //   "duration": "4h",
+  //   "difficulty": 4,
+  //   "tags": [],
+  //   "era": "1930海地",
+  //   "requirements": "预设卡",
+  //   "isNewbie": false,
+  //   "type": "coc",
+  //   "kp": "月海,小隐",
+  //   "author": null,
+  //   "skills": null,
+  //   "notes": null,
+  //   "mastery": "掌握模组",
+  //   "weight": 0,
   // },
+  // {
+  //   "name": "狂气山脉",
+  //   "description": "玩家将扮演攀登者，目标是征服一座最新发现的山峰。",
+  //   "players": "4人",
+  //   "duration": "4h+",
+  //   "difficulty": 2,
+  //   "tags": [],
+  //   "era": "2012现代",
+  //   "requirements": "车卡",
+  //   "isNewbie": false,
+  //   "type": "coc",
+  //   "kp": "月海,小隐",
+  //   "author": null,
+  //   "skills": null,
+  //   "notes": null,
+  //   "mastery": "掌握模组",
+  //   "weight": 1,
+  // },
+
 ]
 export const CocYanwoKey = CocYanwo.map(el => el.name)
 
@@ -768,8 +764,32 @@ export const CocXiaoyin = [
 ]
 export const CocXiaoyinKey = CocXiaoyin.map(el => el.name)
 
+// ======================================= 六KP
+export const CocLiu = [
+  {
+    "name": "23号休息站",
+    "originName": "无",
+    "description": "你从没见过像这样的暴风雪，十月的爱达荷山脉的天气可能不太好，但现在出现在你们面前的却是一片白色的苍茫大地……",
+    "players": "3-6人",
+    "duration": "4-5h",
+    "difficulty": 1,
+    "tags": ["新手本"],
+    "era": "现代美国",
+    "requirements": "车卡",
+    "isNewbie": true,
+    "type": "coc",
+    "kp": "六",
+    "author": "无",
+    "skills": "无",
+    "notes": "纯新人模组",
+    "mastery": "掌握",
+    "weight": -1,
+  },
+]
+export const CocLiuKey = CocLiu.map(el => el.name)
+
 // ======================================= 合并并排序的模组列表
-export const CocAllModules = [...CocAhei, ...CocYanwo, ...CocYuehai, ...CocStore, ...CocXiaoyin]
+export const CocAllModules = [...CocAhei, ...CocYanwo, ...CocYuehai, ...CocStore, ...CocXiaoyin, ...CocLiu]
   .sort((a, b) => {
     // 先排新手
     // 第一优先级：isNewbie (true 在前) 

@@ -789,7 +789,7 @@ export const CocLiu = [
 export const CocLiuKey = CocLiu.map(el => el.name)
 
 // ======================================= 合并并排序的模组列表
-export const CocAllModules = [...CocAhei, ...CocYanwo, ...CocYuehai, ...CocStore, ...CocXiaoyin, ...CocLiu]
+export const CocAllModules = [...CocYanwo, ...CocYuehai, ...CocStore, ...CocXiaoyin, ...CocLiu]
   .sort((a, b) => {
     // 先排新手
     // 第一优先级：isNewbie (true 在前) 

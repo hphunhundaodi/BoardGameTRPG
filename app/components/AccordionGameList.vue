@@ -2,107 +2,79 @@
   <div class="space-y-4">
     <!-- 搜索框 -->
     <div class="relative flex-1">
-      <input
-        v-model="searchQuery"
-        type="text"
-        placeholder="搜索模组中英文名、特色标签"
-        :class="`w-full px-4 py-2 pl-9 pr-9 bg-gradient-to-br border ${colorClass} rounded-lg text-white placeholder:text-slate-500 focus:outline-none focus:border-purple-500/50 focus:bg-black/40 transition-all`"
-      >
+      <input v-model="searchQuery" type="text" placeholder="搜索模组中英文名、特色标签"
+        :class="`w-full px-4 py-2 pl-9 pr-9 bg-gradient-to-br border ${colorClass} rounded-lg text-white placeholder:text-slate-500 focus:outline-none focus:border-purple-500/50 focus:bg-black/40 transition-all`">
       <Icon name="lucide:search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
-      <button
-        v-if="searchQuery"
+      <button v-if="searchQuery"
         class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 hover:text-white transition-colors"
-        @click="searchQuery = ''"
-      >
+        @click="searchQuery = ''">
         <Icon name="lucide:x" class="w-4 h-4" />
       </button>
     </div>
     <!-- COC筛选器 -->
-    <div v-if="category === 'COC'" class="flex gap-4 items-stretch">
-      <!-- 筛选器主体 -->
-      <div
-        class="flex-1 rounded-xl bg-gradient-to-br from-red-900/20 to-purple-900/20 border border-red-500/30 backdrop-blur-sm overflow-hidden">
-        <div class="p-4 space-y-3">
-          <!-- 主筛选 + 搜索 -->
-          <div class="flex gap-3">
-            <!-- 主筛选按钮组 -->
-            <div class="flex gap-2 overflow-y-auto">
-              <button
-                v-for="filter in allFilters"
-                :key="filter"
-                :class="`px-6 py-2 rounded-lg transition-all duration-300 whitespace-nowrap ${(filter === '全部' && selectedFilter === null) || selectedFilter === filter
-                  ? 'bg-gradient-to-r from-red-600 to-purple-600 text-white shadow-lg shadow-red-500/50 border'
-                  : 'bg-black/30 text-slate-300 hover:bg-black/50 hover:text-white border border-white/10'
-                  }`"
-                @click="setSelectedFilter(filter === '全部' ? null : filter as FilterType)"
-              >
-                {{ filter }}
-              </button>
-            </div>
-          </div>
-
-          <!-- 高级筛选 -->
-          <div class="flex items-center justify-between gap-3">
-            <button
-              class="flex items-center gap-1.5 text-sm text-slate-400 hover:text-white transition-colors"
-              @click="showAdvancedFilters = !showAdvancedFilters"
-            >
-              <Icon name="lucide:filter" class="w-3.5 h-3.5" />
-              <span>高级筛选</span>
-              <Icon
-                name="lucide:chevron-down"
-                :class="`w-3.5 h-3.5 transition-transform duration-300 ${showAdvancedFilters ? 'rotate-180' : ''}`"
-              />
+    <!-- <div v-if="category === 'COC'" class="flex gap-4 items-stretch"> -->
+    <!-- 筛选器主体 -->
+    <div
+      class="flex-1 rounded-xl bg-gradient-to-br from-red-900/20 to-purple-900/20 border border-red-500/30 backdrop-blur-sm overflow-hidden">
+      <div class="p-4 space-y-3">
+        <!-- 主筛选 + 搜索 -->
+        <div class="flex gap-3">
+          <!-- 主筛选按钮组 -->
+          <div class="flex gap-2 overflow-y-auto">
+            <button v-for="filter in allFilters" :key="filter" :class="`px-6 py-2 rounded-lg transition-all duration-300 whitespace-nowrap ${(filter === '全部' && selectedFilter === null) || selectedFilter === filter
+              ? 'bg-gradient-to-r from-red-600 to-purple-600 text-white shadow-lg shadow-red-500/50 border'
+              : 'bg-black/30 text-slate-300 hover:bg-black/50 hover:text-white border border-white/10'
+              }`" @click="setSelectedFilter(filter === '全部' ? null : filter as FilterType)">
+              {{ filter }}
             </button>
-
-            <!-- 结果统计 -->
-            <div class="flex items-center gap-3">
-              <div class="text-sm text-slate-400">
-                <span class="text-white">{{ filteredGames.length }}</span> 个模组
-              </div>
-              <button
-                v-if="hasActiveFilters"
-                class="text-sm text-red-400 hover:text-red-300 transition-colors flex items-center gap-1"
-                @click="clearAllFilters"
-              >
-                <Icon name="lucide:x" class="w-3.5 h-3.5" />
-                清除
-              </button>
-            </div>
           </div>
+        </div>
 
-          <!-- 高级筛选选项 -->
-          <Transition
-            @before-enter="beforeEnter"
-            @enter="enter"
-            @after-enter="afterEnter"
-            @before-leave="beforeLeave"
-            @leave="leave"
-            @after-leave="afterLeave"
-          >
-            <div v-if="showAdvancedFilters" class="space-y-3 pt-3 border-t border-white/10">
-              <!-- 难度 + 时长 在同一行 -->
-              <div class="grid grid-cols-2 gap-4">
-                <!-- 难度筛选 -->
-                <div class="space-y-2">
-                  <label class="text-xs text-slate-400">难度等级</label>
-                  <div class="flex gap-1.5">
-                    <button
-                      v-for="level in 5"
-                      :key="level"
-                      :class="`flex-1 py-1.5 rounded-md transition-all duration-300 ${selectedDifficulty === level
-                        ? 'bg-yellow-600/80 text-white shadow-lg shadow-yellow-500/30'
-                        : 'bg-black/30 text-slate-400 hover:bg-black/50 border border-white/10'
-                        }`"
-                      @click="setSelectedDifficulty(level)"
-                    >
-                      <Icon name="lucide:star" class="w-3.5 h-3.5 mx-auto" />
-                    </button>
-                  </div>
+        <!-- 高级筛选 -->
+        <div class="flex items-center justify-between gap-3">
+          <button class="flex items-center gap-1.5 text-sm text-slate-400 hover:text-white transition-colors"
+            @click="showAdvancedFilters = !showAdvancedFilters">
+            <Icon name="lucide:filter" class="w-3.5 h-3.5" />
+            <span>高级筛选</span>
+            <Icon name="lucide:chevron-down"
+              :class="`w-3.5 h-3.5 transition-transform duration-300 ${showAdvancedFilters ? 'rotate-180' : ''}`" />
+          </button>
+
+          <!-- 结果统计 -->
+          <div class="flex items-center gap-3">
+            <div class="text-sm text-slate-400">
+              <span class="text-white">{{ filteredGames.length }}</span> 个模组
+            </div>
+            <button v-if="hasActiveFilters"
+              class="text-sm text-red-400 hover:text-red-300 transition-colors flex items-center gap-1"
+              @click="clearAllFilters">
+              <Icon name="lucide:x" class="w-3.5 h-3.5" />
+              清除
+            </button>
+          </div>
+        </div>
+
+        <!-- 高级筛选选项 -->
+        <Transition @before-enter="beforeEnter" @enter="enter" @after-enter="afterEnter" @before-leave="beforeLeave"
+          @leave="leave" @after-leave="afterLeave">
+          <div v-if="showAdvancedFilters" class="space-y-3 pt-3 border-t border-white/10">
+            <!-- 难度 + 时长 在同一行 -->
+            <div class="grid grid-cols-2 gap-4">
+              <!-- 难度筛选 -->
+              <div class="space-y-2">
+                <label class="text-xs text-slate-400">难度等级</label>
+                <div class="flex gap-1.5">
+                  <button v-for="level in 5" :key="level" :class="`flex-1 py-1.5 rounded-md transition-all duration-300 ${selectedDifficulty === level
+                    ? 'bg-yellow-600/80 text-white shadow-lg shadow-yellow-500/30'
+                    : 'bg-black/30 text-slate-400 hover:bg-black/50 border border-white/10'
+                    }`" @click="setSelectedDifficulty(level)">
+                    <Icon name="lucide:star" class="w-3.5 h-3.5 mx-auto" />
+                  </button>
                 </div>
+              </div>
 
-                <!-- 时长筛选 -->
-                <!-- <div class="space-y-2">
+              <!-- 时长筛选 -->
+              <!-- <div class="space-y-2">
                   <label class="text-xs text-slate-400">游戏时长</label>
                   <div class="grid grid-cols-3 gap-1.5">
                     <button v-for="duration in durationFilters" :key="duration" :class="`py-1.5 rounded-md text-xs transition-all duration-300 ${selectedDuration === duration
@@ -113,14 +85,14 @@
                     </button>
                   </div>
                 </div> -->
-              </div>
             </div>
-          </Transition>
-        </div>
+          </div>
+        </Transition>
       </div>
+    </div>
 
-      <!-- COC类型选择器 -->
-      <div class="w-36 flex flex-col justify-between gap-3">
+    <!-- COC类型选择器 -->
+    <!-- <div class="w-36 flex flex-col justify-between gap-3">
         <button
           v-for="type in cocTypes"
           :key="type"
@@ -137,10 +109,10 @@
             <div class="text-xs leading-tight">{{ type }}</div>
           </div>
         </button>
-      </div>
-    </div>
-    
-    <div v-if="currentCOCType === 'BigWorldAllModules'">
+      </div> -->
+    <!-- </div> -->
+
+    <!-- <div v-if="currentCOCType === 'BigWorldAllModules'">
       <div class="font-bold pb-2">【关于“大世界COC”模式的说明】</div>
       <div class="">
         <div>亲爱的玩家，您关注的“大世界”模式是我们为您准备的特色体验。</div>
@@ -148,20 +120,15 @@
         <div>正因如此，它没有固定的故事简介 —— 您的冒险本身就是独一无二的传奇。</div>
         <div>我们相信，这种未知与高自由度，将为您带来无与伦比的沉浸感。</div>
       </div>
-    </div>
+    </div> -->
 
     <!-- 游戏列表 -->
     <div class="space-y-4">
-      <div
-        v-for="(game, index) in filteredGames"
-        :key="index"
-        :class="`relative rounded-xl bg-gradient-to-br ${colorClass} border backdrop-blur-sm overflow-hidden transition-all duration-300 hover:shadow-xl min-h-[120px]`"
-      >
+      <div v-for="(game, index) in filteredGames" :key="index"
+        :class="`relative rounded-xl bg-gradient-to-br ${colorClass} border backdrop-blur-sm overflow-hidden transition-all duration-300 hover:shadow-xl min-h-[120px]`">
         <!-- 背景图片 -->
-        <div
-          class="absolute inset-0 bg-cover bg-center opacity-10"
-          :style="{ backgroundImage: `url('${getBackgroundImage(game.type)}')` }"
-        />
+        <div class="absolute inset-0 bg-cover bg-center opacity-10"
+          :style="{ backgroundImage: `url('${getBackgroundImage(game.type)}')` }" />
         <!-- 渐变遮罩 -->
         <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/60" />
 
@@ -178,16 +145,12 @@
                   <span v-if="game.originName" class="text-sm text-slate-400 italic">
                     {{ game.originName }}
                   </span>
-                  <span
-                    v-if="game.isCollection"
-                    class="px-2 py-0.5 text-xs bg-amber-500/20 text-amber-300 rounded-full border border-amber-500/30"
-                  >
+                  <span v-if="game.isCollection"
+                    class="px-2 py-0.5 text-xs bg-amber-500/20 text-amber-300 rounded-full border border-amber-500/30">
                     合集 · {{ game.modules?.length || 0 }}个模组
                   </span>
-                  <span
-                    v-else-if="game.isNewbie"
-                    class="px-2 py-0.5 text-xs bg-green-500/20 text-green-300 rounded-full border border-green-500/30"
-                  >
+                  <span v-else-if="game.isNewbie"
+                    class="px-2 py-0.5 text-xs bg-green-500/20 text-green-300 rounded-full border border-green-500/30">
                     新手友好
                   </span>
                 </div>
@@ -203,13 +166,8 @@
                     </div>
                     <div class="flex items-center gap-1">
                       <span class="text-xs">难度:</span>
-                      <Icon
-                        v-for="i in 5"
-                        :key="i"
-                        name="lucide:star"
-                        :customize="fillIcon"
-                        :class="`w-4 h-4 ${i <= game.difficulty ? 'text-yellow-400 fill-yellow-400' : 'text-gray-500'}`"
-                      />
+                      <Icon v-for="i in 5" :key="i" name="lucide:star" :customize="fillIcon"
+                        :class="`w-4 h-4 ${i <= game.difficulty ? 'text-yellow-400 fill-yellow-400' : 'text-gray-500'}`" />
                     </div>
                   </template>
                   <template v-else>
@@ -221,24 +179,15 @@
               </div>
             </div>
             <div class="flex items-center">
-              <Icon
-                name="lucide:chevron-down"
-                :class="`w-5 h-5 text-slate-400 transition-transform duration-300 ${expandedIndex === index ? 'rotate-180' : ''
-                  }`"
-              />
+              <Icon name="lucide:chevron-down" :class="`w-5 h-5 text-slate-400 transition-transform duration-300 ${expandedIndex === index ? 'rotate-180' : ''
+                }`" />
             </div>
           </div>
         </div>
 
         <!-- 展开的详细信息 -->
-        <Transition
-          @before-enter="beforeEnter"
-          @enter="enter"
-          @after-enter="afterEnter"
-          @before-leave="beforeLeave"
-          @leave="leave"
-          @after-leave="afterLeave"
-        >
+        <Transition @before-enter="beforeEnter" @enter="enter" @after-enter="afterEnter" @before-leave="beforeLeave"
+          @leave="leave" @after-leave="afterLeave">
           <div v-if="expandedIndex === index" class="relative z-10 px-6 pb-6 border-t border-white/10">
             <div v-if="game.isCollection && game.modules" class="pt-4 space-y-4">
               <!-- 合集：显示子模组列表 -->
@@ -250,7 +199,8 @@
               </div>
 
               <!-- 合集信息 -->
-              <div v-if="game.author || game.era || game.tags.length > 0" class="grid grid-cols-1 md:grid-cols-2 gap-4 pb-4 border-b border-white/10">
+              <div v-if="game.author || game.era || game.tags.length > 0"
+                class="grid grid-cols-1 md:grid-cols-2 gap-4 pb-4 border-b border-white/10">
                 <div v-if="game.author" class="flex items-center gap-2">
                   <Icon name="lucide:user" class="w-4 h-4 text-slate-400" />
                   <span class="text-sm text-slate-300">
@@ -269,11 +219,8 @@
               <div v-if="game.tags.length > 0" class="pb-4 border-b border-white/10">
                 <h4 class="text-sm text-slate-400 mb-2">合集标签</h4>
                 <div class="flex flex-wrap gap-2">
-                  <span
-                    v-for="(tag, tagIndex) in game.tags"
-                    :key="tagIndex"
-                    class="px-3 py-1 text-xs bg-amber-500/10 rounded-full border border-amber-500/20 text-amber-300"
-                  >
+                  <span v-for="(tag, tagIndex) in game.tags" :key="tagIndex"
+                    class="px-3 py-1 text-xs bg-amber-500/10 rounded-full border border-amber-500/20 text-amber-300">
                     {{ tag }}
                   </span>
                 </div>
@@ -283,21 +230,16 @@
               <div>
                 <h4 class="text-sm text-slate-400 mb-3">包含的模组 ({{ game.modules.length }})</h4>
                 <div class="space-y-3">
-                  <div
-                    v-for="(module, moduleIndex) in game.modules"
-                    :key="moduleIndex"
-                    class="p-4 rounded-lg bg-black/30 border border-white/10 hover:bg-black/40 hover:border-white/20 transition-all"
-                  >
+                  <div v-for="(module, moduleIndex) in game.modules" :key="moduleIndex"
+                    class="p-4 rounded-lg bg-black/30 border border-white/10 hover:bg-black/40 hover:border-white/20 transition-all">
                     <!-- 模组标题 -->
                     <div class="flex items-baseline gap-2 mb-2">
                       <h5 class="text-white">{{ module.name }}</h5>
                       <span v-if="module.originName" class="text-xs text-slate-400 italic">
                         {{ module.originName }}
                       </span>
-                      <span
-                        v-if="module.isNewbie"
-                        class="px-2 py-0.5 text-xs bg-green-500/20 text-green-300 rounded-full border border-green-500/30"
-                      >
+                      <span v-if="module.isNewbie"
+                        class="px-2 py-0.5 text-xs bg-green-500/20 text-green-300 rounded-full border border-green-500/30">
                         新手友好
                       </span>
                     </div>
@@ -314,13 +256,8 @@
                       </div>
                       <div class="flex items-center gap-1">
                         <span>难度:</span>
-                        <Icon
-                          v-for="i in 5"
-                          :key="i"
-                          name="lucide:star"
-                          :customize="fillIcon"
-                          :class="`w-3 h-3 ${i <= module.difficulty ? 'text-yellow-400 fill-yellow-400' : 'text-gray-500'}`"
-                        />
+                        <Icon v-for="i in 5" :key="i" name="lucide:star" :customize="fillIcon"
+                          :class="`w-3 h-3 ${i <= module.difficulty ? 'text-yellow-400 fill-yellow-400' : 'text-gray-500'}`" />
                       </div>
                       <div v-if="module.author" class="flex items-center gap-1">
                         <Icon name="lucide:user" class="w-3 h-3 text-slate-400" />
@@ -348,11 +285,8 @@
 
                     <!-- 模组标签 -->
                     <div v-if="module.tags.length > 0" class="mt-2 flex flex-wrap gap-1">
-                      <span
-                        v-for="(tag, tagIndex) in module.tags"
-                        :key="tagIndex"
-                        class="px-2 py-0.5 text-xs bg-black/20 rounded-full border border-white/10 text-slate-400"
-                      >
+                      <span v-for="(tag, tagIndex) in module.tags" :key="tagIndex"
+                        class="px-2 py-0.5 text-xs bg-black/20 rounded-full border border-white/10 text-slate-400">
                         {{ tag }}
                       </span>
                     </div>
@@ -413,11 +347,8 @@
               <div v-if="game.tags.length > 0" class="border-t border-white/10 pt-4">
                 <h4 class="text-sm text-slate-400 mb-2">特色标签</h4>
                 <div class="flex flex-wrap gap-2">
-                  <span
-                    v-for="(tag, tagIndex) in game.tags"
-                    :key="tagIndex"
-                    class="px-3 py-1 text-xs bg-black/20 rounded-full border border-white/10 text-slate-300"
-                  >
+                  <span v-for="(tag, tagIndex) in game.tags" :key="tagIndex"
+                    class="px-3 py-1 text-xs bg-black/20 rounded-full border border-white/10 text-slate-300">
                     {{ tag }}
                   </span>
                 </div>
@@ -439,7 +370,7 @@
 </template>
 
 <script setup lang="ts">
-import { useCOCType } from '~/composables/useGameData'
+// import { useCOCType } from '~/composables/useGameData'
 
 export interface GameDetails {
   name: string // 中文名 (展示)
@@ -471,7 +402,7 @@ interface Props {
 }
 
 type FilterType = "标准" | "新手"
-type COCType = "标准COC" | "大世界COC"
+// type COCType = "标准COC" | "大世界COC"
 
 // 手动设置 icon 填充
 const fillIcon = (content: string) => {
@@ -497,23 +428,23 @@ const filters: FilterType[] = ["新手", "标准"]
 const allFilters = ["全部", ...filters]
 
 // COC类型选择状态
-const { currentCOCType, setCOCType } = useCOCType()
-const cocTypes: COCType[] = ["标准COC", "大世界COC"]
+// const { currentCOCType, setCOCType } = useCOCType()
+// const cocTypes: COCType[] = ["标准COC", "大世界COC"]
 
 // 计算当前选中的COC类型
-const selectedCOCType = computed(() => {
-  const result = currentCOCType.value === 'CocAllModules' ? '标准COC' : '大世界COC'
-  return result
-})
+// const selectedCOCType = computed(() => {
+//   const result = currentCOCType.value === 'CocAllModules' ? '标准COC' : '大世界COC'
+//   return result
+// })
 
 // 设置COC类型
-const setSelectedCOCType = (type: COCType) => {
-  if (type === '标准COC') {
-    setCOCType('CocAllModules')
-  } else if (type === '大世界COC') {
-    setCOCType('BigWorldAllModules')
-  }
-}
+// const setSelectedCOCType = (type: COCType) => {
+//   if (type === '标准COC') {
+//     setCOCType('CocAllModules')
+//   } else if (type === '大世界COC') {
+//     setCOCType('BigWorldAllModules')
+//   }
+// }
 
 const categoryColors: Record<string, string> = {
   COC: 'from-red-900/20 to-purple-900/20 border-red-500/30',
@@ -573,14 +504,14 @@ const parseDuration = (duration: string): number => {
 // 递归匹配游戏（包含合集内的子模组）
 const matchesGame = (game: GameDetails): boolean => {
   // COC类型筛选
-  if (game.cocType && game.cocType !== selectedCOCType.value) {
-    return false
-  }
-  
+  // if (game.cocType && game.cocType !== selectedCOCType.value) {
+  //   return false
+  // }
+
   // 主要筛选条件
   if (selectedFilter.value === "新手" && !game.isNewbie) return false
   if (selectedFilter.value === "标准" && game.isNewbie) return false
-  
+
   // 搜索查询
   if (searchQuery.value) {
     const query = searchQuery.value.toLowerCase()
@@ -592,12 +523,12 @@ const matchesGame = (game: GameDetails): boolean => {
       return false
     }
   }
-  
+
   // 难度筛选
   if (selectedDifficulty.value !== null && game.difficulty !== selectedDifficulty.value) {
     return false
   }
-  
+
   // 时长筛选
   if (selectedDuration.value) {
     const hours = parseDuration(game.duration)
@@ -605,7 +536,7 @@ const matchesGame = (game: GameDetails): boolean => {
     if (selectedDuration.value === "中（4-6h）" && (hours < 4 || hours > 6)) return false
     if (selectedDuration.value === "长（>6h）" && hours <= 6) return false
   }
-  
+
   return true
 }
 

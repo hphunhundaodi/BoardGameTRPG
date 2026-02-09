@@ -451,6 +451,25 @@ export const DndLiu = [
     "mastery": "掌握模组",
     "weight": 0,
   },
+  {
+    "name": "塔莎之吻的疯人院",
+    "originName": "Madhouse of Tasha’s Kiss",
+    "description": "作为冒险小队的你们，发现前方的小镇像个鬼镇一般，街上空荡荡的，衣服挂在晾衣绳上，随风轻轻拍打着，两匹营养不良的马匹被拴在酒馆前的马桩上。随风飘扬的传单落在你们的脚下，上面写着“一起来！大家来！去看奇妙的塔莎之吻！”的马戏团宣传册",
+    "players": "3-6人",
+    "duration": "6-8h",
+    "difficulty": 4,
+    "tags": ["社交","战斗","救赎","扭曲"],
+    "era": "",
+    "requirements": "车卡",
+    "isNewbie": false,
+    "type": "dnd5E",
+    "kp": "6",
+    "author": "Jeff C. Stevens, Remley Farr, Jeff Stevens Games",
+    "skills": null,
+    "notes": "属性27buy，3/5级开卡，五级一件非普通一件珍稀，三级一件非普通",
+    "mastery": "掌握模组",
+    "weight": 1,
+  },
 ]
 export const DndLiuKey = DndLiu.map(el => el.name)
 

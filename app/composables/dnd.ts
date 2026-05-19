@@ -17,7 +17,6 @@ export const DndYuehai = [
     "author": null,
     "skills": null,
     "notes": "长度：一次结团\n等级：一级开卡，结团升至二级",
-    "mastery": "掌握模组",
     "weight": 0,
   },
   {
@@ -36,7 +35,6 @@ export const DndYuehai = [
     "author": null,
     "skills": null,
     "notes": "长度：约五次结团\n等级：一级开卡，结团升至五级",
-    "mastery": "掌握模组",
     "weight": 0,
   },
   {
@@ -55,7 +53,6 @@ export const DndYuehai = [
     "author": null,
     "skills": null,
     "notes": "长度：约四次结团\n等级：一级开卡，结团升至三级",
-    "mastery": "掌握模组",
     "weight": 0,
   },
   {
@@ -74,7 +71,6 @@ export const DndYuehai = [
     "author": null,
     "skills": null,
     "notes": "长度：约五次结团\n等级：一级开卡，结团升至六级",
-    "mastery": "掌握模组",
     "weight": 0,
   },
   {
@@ -93,7 +89,6 @@ export const DndYuehai = [
     "author": null,
     "skills": null,
     "notes": "长度：约1次结团\n等级：二级开卡\n非常适合衔接《冰风谷:冰霜少女的雾凇》",
-    "mastery": "掌握模组",
     "weight": 0,
   },
   {
@@ -112,7 +107,6 @@ export const DndYuehai = [
     "author": "",
     "skills": "",
     "notes": "长度：约五次结团\n等级：一级开卡，结团升至五级",
-    "mastery": "",
     "weight": 0,
   },
   // {
@@ -131,7 +125,6 @@ export const DndYuehai = [
   //   "author": "",
   //   "skills": "",
   //   "notes": "长度：每层约1~2次，共23层\n等级：5~20级",
-  //   "mastery": "",
   //   "weight": 0,
   // },
   {
@@ -150,7 +143,6 @@ export const DndYuehai = [
     "author": null,
     "skills": null,
     "notes": "长度：约十三到十五次结团\n等级：一级开卡，结团升至十级",
-    "mastery": "",
     "weight": 0,
   },
   {
@@ -169,7 +161,6 @@ export const DndYuehai = [
     "author": "",
     "skills": "",
     "notes": "长度：约二十一到二十三次结团\n等级：一级开卡，结团升至十二级",
-    "mastery": "",
     "weight": 0,
   },
   {
@@ -188,7 +179,6 @@ export const DndYuehai = [
     "author": "",
     "skills": "",
     "notes": "模组可分为上下两部\n上:约十到十二次结团, 一到八级\n下: 约十到十二次结团, 八到十五级\n总长度：约二十一到二十三次结团\n等级：一级开卡，结团升至十五级",
-    "mastery": "",
     "weight": 0,
   },
   {
@@ -207,7 +197,6 @@ export const DndYuehai = [
     author: "Chaosium",
     skills: "",
     notes: "",
-    mastery: "",
     // dnd5EType: "标准DND5E",
     isCollection: true,
     weight: 0,
@@ -228,7 +217,6 @@ export const DndYuehai = [
         "author": "BruceR Cordell",
         "skills": "",
         "notes": "等级：一级开卡，结团升至三级",
-        "mastery": "",
         "weight": 0,
       },
       {
@@ -247,7 +235,6 @@ export const DndYuehai = [
         "author": "Richard Baker",
         "skills": "",
         "notes": "等级：三级级开卡，结团升至五级",
-        "mastery": "",
         "weight": 0,
       },
       {
@@ -266,7 +253,6 @@ export const DndYuehai = [
         "author": "Harold Johnson & Jeff R Leason",
         "skills": "",
         "notes": "等级：五级开卡",
-        "mastery": "",
         "weight": 0,
       },
       {
@@ -285,7 +271,6 @@ export const DndYuehai = [
         "author": "Lawrencs Schick",
         "skills": "",
         "notes": "等级：八级开卡",
-        "mastery": "",
         "weight": 0,
       },
       {
@@ -304,7 +289,6 @@ export const DndYuehai = [
         "author": "Scott Fitzgerald Gray",
         "skills": "",
         "notes": "等级：九到十一级开卡",
-        "mastery": "",
         "weight": 0,
       },
       {
@@ -323,7 +307,6 @@ export const DndYuehai = [
         "author": "Scott Fitzgerald Gray",
         "skills": "",
         "notes": "等级：十一级开卡",
-        "mastery": "",
         "weight": 0,
       },
       {
@@ -342,7 +325,6 @@ export const DndYuehai = [
         "author": "加里·吉加克斯",
         "skills": "",
         "notes": "长度：约???次结团\n等级：???级开卡",
-        "mastery": "",
         "weight": 0,
       },
     ],
@@ -370,7 +352,6 @@ export const DndLiu = [
     "author": null,
     "skills": null,
     "notes": "长度：单次团，1/3/5级开卡",
-    "mastery": "掌握模组",
     "weight": 0,
   },
   {
@@ -389,7 +370,6 @@ export const DndLiu = [
     "author": null,
     "skills": null,
     "notes": "长度：单次团，1/3/5级开卡",
-    "mastery": "掌握模组",
     "weight": 0,
   },
   {
@@ -408,7 +388,6 @@ export const DndLiu = [
     "author": "Jeff C. Stevens, Remley Farr, Jeff Stevens Games",
     "skills": null,
     "notes": "属性27buy，3/5级开卡，五级一件非普通一件珍稀，三级一件非普通",
-    "mastery": "掌握模组",
     "weight": 1,
   },
 ]

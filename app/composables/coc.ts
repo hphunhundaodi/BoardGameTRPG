@@ -541,9 +541,9 @@ export const CocLiuKey = CocLiu.map(el => el.name)
 // ======================================= 月海KP
 export const CocYe = [
   {
-    "name": "鬼屋",
+    "name": "《鬼屋三部曲》",
     "originName": "",
-    "description": "20 世纪 20 年代 (1920s)，你被聘请去调查一座波士顿的老房子——有传言称那里面正在闹鬼！",
+    "description": "新手入坑的经典之作，走过路过不要错过！",
     "players": "4-6人",
     "duration": "4-6h",
     "difficulty": 2,
@@ -559,6 +559,24 @@ export const CocYe = [
     "weight": 0,
     isCollection: true,
     modules: [
+      {
+        "name": "鬼屋",
+        "originName": "",
+        "description": "20 世纪 20 年代 (1920s)，你被聘请去调查一座波士顿的老房子——有传言称那里面正在闹鬼！",
+        "players": "4-6人",
+        "duration": "4-6h",
+        "difficulty": 2,
+        "tags": ["克苏鲁", "近代", "新手团"],
+        "era": "1920s美国",
+        "requirements": "车卡",
+        "isNewbie": true,
+        "type": "coc",
+        "kp": "夜",
+        "author": "",
+        "skills": "侦察，聆听，图书馆",
+        "notes": "经典，不用多说！",
+        "weight": 0,
+      },
       {
         "name": "猫之摇篮",
         "originName": "",

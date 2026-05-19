@@ -115,25 +115,25 @@ export const DndYuehai = [
     "mastery": "",
     "weight": 0,
   },
-  {
-    "name": "深水城-疯法师的地城",
-    "originName": "Dungeon Of The Mad Mage",
-    "description": "是男人就下地城！！！ 23层地下城对应5到20级的冒险家，每层都可以是独立的团。",
-    "players": "3-6人",
-    "duration": "4-6h",
-    "difficulty": 4,
-    "tags": ["是男人就下一百层"],
-    "era": "费伦, 深水城",
-    "requirements": "车卡",
-    "isNewbie": false,
-    "type": "dnd5E",
-    "kp": "月海",
-    "author": "",
-    "skills": "",
-    "notes": "长度：每层约1~2次，共23层\n等级：5~20级",
-    "mastery": "",
-    "weight": 0,
-  },
+  // {
+  //   "name": "深水城-疯法师的地城",
+  //   "originName": "Dungeon Of The Mad Mage",
+  //   "description": "是男人就下地城！！！ 23层地下城对应5到20级的冒险家，每层都可以是独立的团。",
+  //   "players": "3-6人",
+  //   "duration": "4-6h",
+  //   "difficulty": 4,
+  //   "tags": ["是男人就下一百层"],
+  //   "era": "费伦, 深水城",
+  //   "requirements": "车卡",
+  //   "isNewbie": false,
+  //   "type": "dnd5E",
+  //   "kp": "月海",
+  //   "author": "",
+  //   "skills": "",
+  //   "notes": "长度：每层约1~2次，共23层\n等级：5~20级",
+  //   "mastery": "",
+  //   "weight": 0,
+  // },
   {
     "name": "施特拉德的诅咒",
     "originName": "Curse Of Strahd",
@@ -352,65 +352,6 @@ export const DndYuehai = [
 ]
 export const DndYuehaiKey = DndYuehai.map(el => el.name)
 
-// ======================================= 燕窝KP
-export const DndYanwo = [
-  {
-    "name": "雪夜怪谈",
-    "description": "起因：一位牧师委托你们前往雪山中的修道院看望自己的弟弟——掌门人阿鲁津。",
-    "players": "4人",
-    "duration": "6-7h",
-    "difficulty": 1,
-    "tags": [],
-    "era": "",
-    "requirements": "车卡",
-    "isNewbie": true,
-    "type": "dnd5E",
-    "kp": "燕窝",
-    "author": " Mads Hvelplund",
-    "skills": "",
-    "notes": "dnd入门团，推荐给新手，后续可以衔接其他模组\n本模组不设补给点，但pc可以在正式开团之前用初始资金进行采购。\n短团，欢迎多多rp，欢迎合理搞事。 可能会有的后续模组：【魔现封神】。\n长度：一次结团\n等级：一级开卡",
-    "mastery": "掌握模组",
-    "weight": 0,
-  },
-  // {
-  //   "name": "暗无天日",
-  //   "description": "很久很久以前，一座巨大的城堡由于某种原因陷入地下。现在，残暴的怪物在厅堂中徘徊，邪恶在城堡中逐渐滋长。城堡底层枯萎的花园中，有人正在培育扭曲的树木。\n十二年前，为了证实“魔法苹果”的传言，放逐者贝利克来到这座城堡。他发现这座古老的建筑是由于某种魔法力量才陷入地下。在摆平城堡中的新居民后，贝利克在底层黄昏树丛的中心发现了自己寻找的目标，一根曾经钉在吸血鬼心脏上的古老木桩生根发芽，长成一颗被称为“甘提亚斯”的大树。夏至时，甘提亚斯树会结出一枚鲜红的苹果，为人们带来青春。冬至时，甘提亚斯树会结出一枚苍白的苹果，为人们带来死亡。贝利克在附近的区域散布两种苹果，为人们带来幸福与噩梦。但无论苹果的颜色，甘提亚斯树的种子都会成长为微似人形的活化幼树，在附近繁衍活动。",
-  //   "players": "4人",
-  //   "duration": "8h",
-  //   "difficulty": 1,
-  //   "tags": [],
-  //   "era": "",
-  //   "requirements": "车卡",
-  //   "isNewbie": true,
-  //   "type": "dnd5E",
-  //   "kp": "燕窝",
-  //   "author": null,
-  //   "skills": "",
-  //   "notes": "dnd入门团，推荐给新手，后续可以衔接其他模组\n长度：约一到二次结团\n等级：一级开卡，最终达到二级甚至三级",
-  //   "mastery": "掌握模组",
-  //   "weight": 0,
-  // },
-  {
-    "name": "林中魅影",
-    "description": "朽木镇旁的黑血森林常年来一直为镇民津津乐道，据说：镇长有一个善良而美丽的女儿，名叫奥莉雅。她深受大家的喜爱，但有一天，奥莉雅收留了一个外地来的旅人，却不曾想到那个旅者竟然是一个林中魅影！那晚正好是月圆之夜，残暴的林中魅影虽然被杀死，但奥莉雅却不幸被咬伤，她感觉到自己身体的异样，知道自己已经染上了诅咒，于是便在黑血森林中上吊了。从那以后，那片森林便被迷雾所笼罩，而那奥莉雅的魂灵则在迷雾中游荡......\n但这还没完，黑血森林的迷雾似乎在逐渐地向外蔓延，许多离森林近的村子都被迷雾所覆盖，变成了死镇。\n镇民们十分惊慌，镇长也发出委托，希望有人能解决黑血森林的异变，但所有进入迷雾中的人都没能再回来。",
-    "players": "4人",
-    "duration": "5-7h",
-    "difficulty": 3,
-    "tags": [],
-    "era": "",
-    "requirements": "车卡",
-    "isNewbie": false,
-    "type": "dnd5R",
-    "kp": "燕窝",
-    "author": null,
-    "skills": "",
-    "notes": "身份：你可以是朽木镇本地人，可以是正巧旅行到这里的旅者，也可以是镇长从城里找来的雇佣兵……。5级开卡，全拓展，可以有三个非普通物品（+1武器和+1防具也是非普通）+1治疗药水+3天的干粮+一些身份有关的个人物品\n等级：五级开卡，适合老手",
-    "mastery": "掌握模组",
-    "weight": 0,
-  },
-]
-export const DndYanwoKey = DndYanwo.map(el => el.name)
-
 // ======================================= 六KP
 export const DndLiu = [
   {
@@ -474,7 +415,7 @@ export const DndLiu = [
 export const DndLiuKey = DndLiu.map(el => el.name)
 
 // ======================================= 合并并排序的模组列表
-export const DndAllModules = [...DndYuehai, ...DndYanwo, ...DndLiu]
+export const DndAllModules = [...DndYuehai, ...DndLiu]
   .sort((a, b) => {
     // 首先按 isNewbie 排序，true 的排在前面
     if (a.isNewbie !== b.isNewbie) {

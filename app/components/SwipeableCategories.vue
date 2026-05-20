@@ -2,7 +2,7 @@
   <div class="relative">
     <!-- 动态背景 -->
     <div 
-      :class="`fixed inset-0 bg-gradient-to-br ${backgroundGradient} transition-all duration-1000 ease-in-out`"
+      :class="`fixed inset-0 bg-linear-to-br ${backgroundGradient} transition-all duration-1000 ease-in-out`"
       style="z-index: -1"
     />
     
@@ -35,8 +35,8 @@
     <div class="relative flex items-center justify-center min-h-[60vh]">
       <!-- 左箭头 -->
       <button
-        @click="prevCategory"
         class="absolute left-8 z-10 p-4 rounded-full bg-black/20 border border-white/20 hover:bg-black/40 transition-all duration-300 group"
+        @click="prevCategory"
       >
         <Icon name="heroicons:chevron-left" class="w-6 h-6 text-white group-hover:scale-110 transition-transform" />
       </button>
@@ -44,7 +44,7 @@
       <!-- 中心卡片 -->
       <div class="relative max-w-md w-full mx-16">
         <div 
-          :class="`relative p-12 rounded-2xl bg-gradient-to-br ${config?.color || 'from-gray-900/20 to-slate-900/20 border-gray-500/30'} border-2 backdrop-blur-sm cursor-pointer hover:scale-105 transition-all duration-500 hover:shadow-2xl group`"
+          :class="`relative p-12 rounded-2xl bg-linear-to-br ${config?.color || 'from-gray-900/20 to-slate-900/20 border-gray-500/30'} border-2 backdrop-blur-sm cursor-pointer hover:scale-105 transition-all duration-500 hover:shadow-2xl group`"
           @click="onCategorySelect(currentCategory)"
         >
           <div class="flex flex-col items-center text-center">
@@ -59,7 +59,7 @@
             </p>
           </div>
           
-          <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          <div class="absolute inset-0 bg-linear-to-t from-black/20 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           
           <!-- 悬停时的边框光效 -->
           <div class="absolute inset-0 rounded-2xl border-2 border-white/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -68,8 +68,8 @@
 
       <!-- 右箭头 -->
       <button
-        @click="nextCategory"
         class="absolute right-8 z-10 p-4 rounded-full bg-black/20 border border-white/20 hover:bg-black/40 transition-all duration-300 group"
+        @click="nextCategory"
       >
         <Icon name="heroicons:chevron-right" class="w-6 h-6 text-white group-hover:scale-110 transition-transform" />
       </button>
@@ -80,12 +80,12 @@
       <button
         v-for="(_, index) in categories"
         :key="index"
-        @click="setCurrentIndex(index)"
         :class="`w-3 h-3 rounded-full transition-all duration-300 ${
           index === currentIndex 
             ? 'bg-white scale-125' 
             : 'bg-white/30 hover:bg-white/50'
         }`"
+        @click="setCurrentIndex(index)"
       />
     </div>
 
@@ -95,12 +95,12 @@
         <button
           v-for="(category, index) in categories"
           :key="category"
-          @click="setCurrentIndex(index)"
           :class="`px-4 py-2 rounded-full transition-all duration-300 ${
             index === currentIndex
               ? 'bg-white/20 text-white border border-white/30'
               : 'text-slate-400 hover:text-white hover:bg-white/10'
           }`"
+          @click="setCurrentIndex(index)"
         >
           {{ category }}
         </button>

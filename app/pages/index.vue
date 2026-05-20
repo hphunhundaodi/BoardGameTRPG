@@ -1,6 +1,6 @@
 <template>
   <div class="PageHomeRoot">
-    <div class="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900/50 to-slate-900 p-6">
+    <div class="min-h-screen bg-linear-to-br from-slate-900 via-purple-900/50 to-slate-900 p-6">
       <!-- 背景装饰 -->
       <div class="fixed inset-0 overflow-hidden pointer-events-none">
         <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl" />
@@ -10,7 +10,7 @@
       <div class="relative max-w-4xl mx-auto">
         <!-- Header -->
         <div class="text-center mb-16">
-          <h1 class="text-5xl mb-6 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+          <h1 class="text-5xl mb-6 bg-linear-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
             {{ pageInfo.title }}
           </h1>
           <p class="text-slate-300 text-xl">
@@ -23,7 +23,7 @@
           <div
             v-for="(category, index) in categories"
             :key="`main-category-${index}`"
-            :class="`relative p-12 rounded-2xl bg-gradient-to-br ${getCategoryConfig(category).color} border-2 backdrop-blur-sm cursor-pointer hover:scale-105 transition-all duration-500 hover:shadow-2xl group`"
+            :class="`relative p-12 rounded-2xl bg-linear-to-br ${getCategoryConfig(category).color} border-2 backdrop-blur-sm cursor-pointer hover:scale-105 transition-all duration-500 hover:shadow-2xl group`"
             @click="goToCategory(category)"
           >
             <div class="flex flex-col items-center text-center">
@@ -31,7 +31,8 @@
                 {{ getCategoryConfig(category).icon }}
               </div>
               <h3 class="text-3xl mb-4 group-hover:text-white transition-colors">
-                {{ category }} {{ index === 0 ? '(敬请期待)' : '' }}
+                {{ category }} 
+                <!-- {{ index === 0 ? '(敬请期待)' : '' }} -->
               </h3>
               <p class="text-lg text-slate-400 group-hover:text-slate-300 transition-colors">
                 {{ getCategoryConfig(category).description }}
@@ -55,11 +56,7 @@
 </template>
 
 <script setup lang="ts">
-import { 
-  gameDetailsData, 
-  categoryConfig,
-  categoryRouterKey,
- } from '~/composables/useGameData'
+import { categoryConfig } from '~/composables/useGameData'
 
 // 设置页面标题
 useHead({
@@ -67,13 +64,10 @@ useHead({
 })
 
 const router = useRouter()
-const categories = computed(() => Object.keys(gameDetailsData))
+const categories = computed(() => ['跑团'])
 const pageInfo = computed(() => ({ title: '游戏世界', description: '选择你想要体验的游戏类型' }))
-const goToCategory = (category: string) => {
-  const categorySlug = categoryRouterKey[category as keyof typeof categoryRouterKey]
-  if (categorySlug) {
-    router.push(`/${categorySlug}`)
-  }
+const goToCategory = (_category?: string) => {
+  router.push('/adventure')
 }
 const getCategoryConfig = (category: string) => {
   if (category in categoryConfig) {

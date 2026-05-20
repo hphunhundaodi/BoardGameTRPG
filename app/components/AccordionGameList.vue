@@ -2,10 +2,12 @@
   <div class="space-y-4">
     <!-- 搜索框 -->
     <div class="relative flex-1">
-      <input v-model="searchQuery" type="text" placeholder="搜索模组中英文名、特色标签"
-        :class="`w-full px-4 py-2 pl-9 pr-9 bg-gradient-to-br border ${colorClass} rounded-lg text-white placeholder:text-slate-500 focus:outline-none focus:border-purple-500/50 focus:bg-black/40 transition-all`">
+      <input
+v-model="searchQuery" type="text" placeholder="搜索模组中英文名、特色标签"
+        :class="`w-full px-4 py-2 pl-9 pr-9 bg-linear-to-br border ${colorClass} rounded-lg text-white placeholder:text-slate-500 focus:outline-none focus:border-purple-500/50 focus:bg-black/40 transition-all`">
       <Icon name="lucide:search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
-      <button v-if="searchQuery"
+      <button
+v-if="searchQuery"
         class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 hover:text-white transition-colors"
         @click="searchQuery = ''">
         <Icon name="lucide:x" class="w-4 h-4" />
@@ -15,14 +17,15 @@
     <!-- <div v-if="category === 'COC'" class="flex gap-4 items-stretch"> -->
     <!-- 筛选器主体 -->
     <div
-      class="flex-1 rounded-xl bg-gradient-to-br from-red-900/20 to-purple-900/20 border border-red-500/30 backdrop-blur-sm overflow-hidden">
+      class="flex-1 rounded-xl bg-linear-to-br from-red-900/20 to-purple-900/20 border border-red-500/30 backdrop-blur-sm overflow-hidden">
       <div class="p-4 space-y-3">
         <!-- 主筛选 + 搜索 -->
         <div class="flex gap-3">
           <!-- 主筛选按钮组 -->
           <div class="flex gap-2 overflow-y-auto">
-            <button v-for="filter in allFilters" :key="filter" :class="`px-6 py-2 rounded-lg transition-all duration-300 whitespace-nowrap ${(filter === '全部' && selectedFilter === null) || selectedFilter === filter
-              ? 'bg-gradient-to-r from-red-600 to-purple-600 text-white shadow-lg shadow-red-500/50 border'
+            <button
+v-for="filter in allFilters" :key="filter" :class="`px-6 py-2 rounded-lg transition-all duration-300 whitespace-nowrap ${(filter === '全部' && selectedFilter === null) || selectedFilter === filter
+              ? 'bg-linear-to-r from-red-600 to-purple-600 text-white shadow-lg shadow-red-500/50 border'
               : 'bg-black/30 text-slate-300 hover:bg-black/50 hover:text-white border border-white/10'
               }`" @click="setSelectedFilter(filter === '全部' ? null : filter as FilterType)">
               {{ filter }}
@@ -32,11 +35,13 @@
 
         <!-- 高级筛选 -->
         <div class="flex items-center justify-between gap-3">
-          <button class="flex items-center gap-1.5 text-sm text-slate-400 hover:text-white transition-colors"
+          <button
+            class="flex items-center gap-1.5 text-sm text-slate-400 hover:text-white transition-colors"
             @click="showAdvancedFilters = !showAdvancedFilters">
             <Icon name="lucide:filter" class="w-3.5 h-3.5" />
             <span>高级筛选</span>
-            <Icon name="lucide:chevron-down"
+            <Icon
+              name="lucide:chevron-down"
               :class="`w-3.5 h-3.5 transition-transform duration-300 ${showAdvancedFilters ? 'rotate-180' : ''}`" />
           </button>
 
@@ -45,7 +50,8 @@
             <div class="text-sm text-slate-400">
               <span class="text-white">{{ filteredGames.length }}</span> 个模组
             </div>
-            <button v-if="hasActiveFilters"
+            <button
+              v-if="hasActiveFilters"
               class="text-sm text-red-400 hover:text-red-300 transition-colors flex items-center gap-1"
               @click="clearAllFilters">
               <Icon name="lucide:x" class="w-3.5 h-3.5" />
@@ -55,7 +61,8 @@
         </div>
 
         <!-- 高级筛选选项 -->
-        <Transition @before-enter="beforeEnter" @enter="enter" @after-enter="afterEnter" @before-leave="beforeLeave"
+        <Transition
+          @before-enter="beforeEnter" @enter="enter" @after-enter="afterEnter" @before-leave="beforeLeave"
           @leave="leave" @after-leave="afterLeave">
           <div v-if="showAdvancedFilters" class="space-y-3 pt-3 border-t border-white/10">
             <!-- 难度 + 时长 在同一行 -->
@@ -64,7 +71,8 @@
               <div class="space-y-2">
                 <label class="text-xs text-slate-400">难度等级</label>
                 <div class="flex gap-1.5">
-                  <button v-for="level in 5" :key="level" :class="`flex-1 py-1.5 rounded-md transition-all duration-300 ${selectedDifficulty === level
+                  <button
+                    v-for="level in 5" :key="level" :class="`flex-1 py-1.5 rounded-md transition-all duration-300 ${selectedDifficulty === level
                     ? 'bg-yellow-600/80 text-white shadow-lg shadow-yellow-500/30'
                     : 'bg-black/30 text-slate-400 hover:bg-black/50 border border-white/10'
                     }`" @click="setSelectedDifficulty(level)">
@@ -97,8 +105,8 @@
           v-for="type in cocTypes"
           :key="type"
           :class="`h-full flex-1 px-2 py-1 rounded-xl transition-all duration-200 ${selectedCOCType === type
-            ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white border shadow-lg shadow-purple-500/50 scale-105'
-            : 'bg-gradient-to-br from-red-900/20 to-purple-900/20 border border-red-500/30 text-slate-300 hover:border-purple-500/50 hover:text-white backdrop-blur-sm'
+            ? 'bg-linear-to-r from-purple-600 to-pink-600 text-white border shadow-lg shadow-purple-500/50 scale-105'
+            : 'bg-linear-to-br from-red-900/20 to-purple-900/20 border border-red-500/30 text-slate-300 hover:border-purple-500/50 hover:text-white backdrop-blur-sm'
             }`"
           @click="setSelectedCOCType(type)"
         >
@@ -124,13 +132,15 @@
 
     <!-- 游戏列表 -->
     <div class="space-y-4">
-      <div v-for="(game, index) in filteredGames" :key="index"
-        :class="`relative rounded-xl bg-gradient-to-br ${colorClass} border backdrop-blur-sm overflow-hidden transition-all duration-300 hover:shadow-xl min-h-[120px]`">
+      <div
+        v-for="(game, index) in filteredGames" :key="index"
+        :class="`relative rounded-xl bg-linear-to-br ${colorClass} border backdrop-blur-sm overflow-hidden transition-all duration-300 hover:shadow-xl min-h-30`">
         <!-- 背景图片 -->
-        <div class="absolute inset-0 bg-cover bg-center opacity-10"
+        <div
+          class="absolute inset-0 bg-cover bg-center opacity-10"
           :style="{ backgroundImage: `url('${getBackgroundImage(game.type)}')` }" />
         <!-- 渐变遮罩 -->
-        <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/60" />
+        <div class="absolute inset-0 bg-linear-to-r from-black/60 via-black/40 to-black/60" />
 
         <!-- 折叠的基础信息 -->
         <div class="relative p-6 cursor-pointer z-10" @click="toggleExpanded(index)">
@@ -145,11 +155,13 @@
                   <span v-if="game.originName" class="text-sm text-slate-400 italic">
                     {{ game.originName }}
                   </span>
-                  <span v-if="game.isCollection"
+                  <span
+                    v-if="game.isCollection"
                     class="px-2 py-0.5 text-xs bg-amber-500/20 text-amber-300 rounded-full border border-amber-500/30">
                     合集 · {{ game.modules?.length || 0 }}个模组
                   </span>
-                  <span v-else-if="game.isNewbie"
+                  <span
+                    v-else-if="game.isNewbie"
                     class="px-2 py-0.5 text-xs bg-green-500/20 text-green-300 rounded-full border border-green-500/30">
                     新手友好
                   </span>
@@ -166,8 +178,9 @@
                     </div>
                     <div class="flex items-center gap-1">
                       <span class="text-xs">难度:</span>
-                      <Icon v-for="i in 5" :key="i" name="lucide:star" :customize="fillIcon"
-                        :class="`w-4 h-4 ${i <= game.difficulty ? 'text-yellow-400 fill-yellow-400' : 'text-gray-500'}`" />
+                        <span v-for="i in 5" :key="i" class="inline-block">
+                          <RatingStar :state="getStarState(game.difficulty, i)" :size="16" />
+                        </span>
                     </div>
                   </template>
                   <template v-else>
@@ -179,14 +192,15 @@
               </div>
             </div>
             <div class="flex items-center">
-              <Icon name="lucide:chevron-down" :class="`w-5 h-5 text-slate-400 transition-transform duration-300 ${expandedIndex === index ? 'rotate-180' : ''
-                }`" />
+              <Icon
+                name="lucide:chevron-down" :class="`w-5 h-5 text-slate-400 transition-transform duration-300 ${expandedIndex === index ? 'rotate-180' : ''}`" />
             </div>
           </div>
         </div>
 
         <!-- 展开的详细信息 -->
-        <Transition @before-enter="beforeEnter" @enter="enter" @after-enter="afterEnter" @before-leave="beforeLeave"
+        <Transition
+          @before-enter="beforeEnter" @enter="enter" @after-enter="afterEnter" @before-leave="beforeLeave"
           @leave="leave" @after-leave="afterLeave">
           <div v-if="expandedIndex === index" class="relative z-10 px-6 pb-6 border-t border-white/10">
             <div v-if="game.isCollection && game.modules" class="pt-4 space-y-4">
@@ -199,7 +213,8 @@
               </div>
 
               <!-- 合集信息 -->
-              <div v-if="game.author || game.era || game.tags.length > 0"
+              <div
+                v-if="game.author || game.era || game.tags.length > 0"
                 class="grid grid-cols-1 md:grid-cols-2 gap-4 pb-4 border-b border-white/10">
                 <div v-if="game.author" class="flex items-center gap-2">
                   <Icon name="lucide:user" class="w-4 h-4 text-slate-400" />
@@ -219,7 +234,8 @@
               <div v-if="game.tags.length > 0" class="pb-4 border-b border-white/10">
                 <h4 class="text-sm text-slate-400 mb-2">合集标签</h4>
                 <div class="flex flex-wrap gap-2">
-                  <span v-for="(tag, tagIndex) in game.tags" :key="tagIndex"
+                  <span
+                    v-for="(tag, tagIndex) in game.tags" :key="tagIndex"
                     class="px-3 py-1 text-xs bg-amber-500/10 rounded-full border border-amber-500/20 text-amber-300">
                     {{ tag }}
                   </span>
@@ -230,7 +246,8 @@
               <div>
                 <h4 class="text-sm text-slate-400 mb-3">包含的模组 ({{ game.modules.length }})</h4>
                 <div class="space-y-3">
-                  <div v-for="(module, moduleIndex) in game.modules" :key="moduleIndex"
+                  <div
+                    v-for="(module, moduleIndex) in game.modules" :key="moduleIndex"
                     class="p-4 rounded-lg bg-black/30 border border-white/10 hover:bg-black/40 hover:border-white/20 transition-all">
                     <!-- 模组标题 -->
                     <div class="flex items-baseline gap-2 mb-2">
@@ -238,7 +255,8 @@
                       <span v-if="module.originName" class="text-xs text-slate-400 italic">
                         {{ module.originName }}
                       </span>
-                      <span v-if="module.isNewbie"
+                      <span
+                        v-if="module.isNewbie"
                         class="px-2 py-0.5 text-xs bg-green-500/20 text-green-300 rounded-full border border-green-500/30">
                         新手友好
                       </span>
@@ -256,8 +274,9 @@
                       </div>
                       <div class="flex items-center gap-1">
                         <span>难度:</span>
-                        <Icon v-for="i in 5" :key="i" name="lucide:star" :customize="fillIcon"
-                          :class="`w-3 h-3 ${i <= module.difficulty ? 'text-yellow-400 fill-yellow-400' : 'text-gray-500'}`" />
+                        <span v-for="i in 5" :key="i" class="inline-block">
+                          <RatingStar :state="getStarState(module.difficulty, i)" :size="12" />
+                        </span>
                       </div>
                       <div v-if="module.author" class="flex items-center gap-1">
                         <Icon name="lucide:user" class="w-3 h-3 text-slate-400" />
@@ -285,7 +304,8 @@
 
                     <!-- 模组标签 -->
                     <div v-if="module.tags.length > 0" class="mt-2 flex flex-wrap gap-1">
-                      <span v-for="(tag, tagIndex) in module.tags" :key="tagIndex"
+                      <span
+                        v-for="(tag, tagIndex) in module.tags" :key="tagIndex"
                         class="px-2 py-0.5 text-xs bg-black/20 rounded-full border border-white/10 text-slate-400">
                         {{ tag }}
                       </span>
@@ -347,7 +367,8 @@
               <div v-if="game.tags.length > 0" class="border-t border-white/10 pt-4">
                 <h4 class="text-sm text-slate-400 mb-2">特色标签</h4>
                 <div class="flex flex-wrap gap-2">
-                  <span v-for="(tag, tagIndex) in game.tags" :key="tagIndex"
+                  <span
+                    v-for="(tag, tagIndex) in game.tags" :key="tagIndex"
                     class="px-3 py-1 text-xs bg-black/20 rounded-full border border-white/10 text-slate-300">
                     {{ tag }}
                   </span>
@@ -359,7 +380,7 @@
 
         <!-- 悬停效果 -->
         <div
-          class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 pointer-events-none z-5" />
+          class="absolute inset-0 bg-linear-to-t from-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 pointer-events-none z-5" />
         <!-- 展开时的额外背景增强 -->
         <Transition name="fade">
           <div v-if="expandedIndex === index" class="absolute inset-0 bg-black/20 pointer-events-none" />
@@ -370,7 +391,38 @@
 </template>
 
 <script setup lang="ts">
+import { defineComponent, h } from 'vue'
+import type { PropType } from 'vue'
 // import { useCOCType } from '~/composables/useGameData'
+
+const RatingStar = defineComponent({
+  name: 'RatingStar',
+  
+  props: {
+    state: { type: String as PropType<'full' | 'half' | 'empty'>, required: true },
+    size: { type: Number as PropType<number>, default: 16 }
+  },
+  setup(props) {
+    const path = 'M12 .587l3.668 7.431L24 9.748l-6 5.847L19.335 24 12 20.201 4.665 24 6 15.595 0 9.748l8.332-1.73L12 .587z'
+    return () => {
+      const size = props.size
+      const common = { width: size, height: size, viewBox: '0 0 24 24', xmlns: 'http://www.w3.org/2000/svg' }
+      if (props.state === 'full') {
+        return h('svg', common, [h('path', { d: path, fill: '#f6c90e' })])
+      }
+      if (props.state === 'empty') {
+        return h('svg', common, [h('path', { d: path, fill: 'none', stroke: '#6b7280', 'stroke-width': 1.1 })])
+      }
+      // half
+      const clipId = 'half-clip-' + Math.random().toString(36).slice(2, 9)
+      return h('svg', common, [
+        h('defs', {}, [h('clipPath', { id: clipId }, [h('rect', { x: 0, y: 0, width: 12, height: 24 })])]),
+        h('path', { d: path, fill: '#6b7280' }),
+        h('path', { d: path, fill: '#f6c90e', 'clip-path': `url(#${clipId})` })
+      ])
+    }
+  }
+})
 
 export interface GameDetails {
   name: string // 中文名 (展示)
@@ -404,11 +456,7 @@ interface Props {
 type FilterType = "标准" | "新手"
 // type COCType = "标准COC" | "大世界COC"
 
-// 手动设置 icon 填充
-const fillIcon = (content: string) => {
-  const filledPath = content.replace('fill="none"', 'fill="currentColor"');
-  return filledPath
-}
+
 
 const props = defineProps<Props>()
 const expandedIndex = ref<number | null>(null)
@@ -449,19 +497,19 @@ const allFilters = ["全部", ...filters]
 const categoryColors: Record<string, string> = {
   COC: 'from-red-900/20 to-purple-900/20 border-red-500/30',
   DND: 'from-blue-900/20 to-green-900/20 border-blue-500/30',
-  毛线: 'from-pink-900/20 to-rose-900/20 border-pink-500/30',
-  轻策: 'from-yellow-900/20 to-orange-900/20 border-yellow-500/30',
-  中策: 'from-blue-900/20 to-cyan-900/20 border-blue-500/30',
-  重策: 'from-red-900/20 to-orange-900/20 border-red-500/30'
+  // 毛线: 'from-pink-900/20 to-rose-900/20 border-pink-500/30',
+  // 轻策: 'from-yellow-900/20 to-orange-900/20 border-yellow-500/30',
+  // 中策: 'from-blue-900/20 to-cyan-900/20 border-blue-500/30',
+  // 重策: 'from-red-900/20 to-orange-900/20 border-red-500/30'
 }
 
 const categoryIcons: Record<string, string> = {
   COC: '🌟',
   DND: '🐉',
-  毛线: '🧶',
-  轻策: '⚡',
-  中策: '🧠',
-  重策: '⚔️'
+  // 毛线: '🧶',
+  // 轻策: '⚡',
+  // 中策: '🧠',
+  // 重策: '⚔️'
 }
 
 const colorClass = computed(
@@ -477,15 +525,23 @@ const toggleExpanded = (index: number) => {
   expandedIndexRef.value = expandedIndexRef.value === index ? null : index
 }
 
+const getStarState = (value: number, index: number) => {
+  const floor = Math.floor(value)
+  const frac = Math.round((value - floor) * 10) / 10
+  if (index <= floor) return 'full'
+  if (index === floor + 1 && frac >= 0.5) return 'half'
+  return 'empty'
+}
+
 const getBackgroundImage = (gameType: string) => {
   const backgroundImages: Record<string, string> = {
     coc: 'https://images.unsplash.com/photo-1701791470518-cba3a91d6abd?auto=format&fit=crop&w=1080&q=80',
     dnd: 'https://images.unsplash.com/photo-1683660107861-c555be9775b9?auto=format&fit=crop&w=1080&q=80',
     dnd5E: 'https://images.unsplash.com/photo-1683660107861-c555be9775b9?auto=format&fit=crop&w=1080&q=80',
-    boardgame:
-      'https://images.unsplash.com/photo-1563811771046-ba984ff30900?auto=format&fit=crop&w=1080&q=80'
+    // boardgame:
+    //   'https://images.unsplash.com/photo-1563811771046-ba984ff30900?auto=format&fit=crop&w=1080&q=80'
   }
-  return backgroundImages[gameType] || backgroundImages.boardgame
+  return backgroundImages[gameType] // || backgroundImages.boardgame
 }
 
 // 时长解析函数

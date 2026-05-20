@@ -1,5 +1,5 @@
 <template>
-  <div class="PageCategoryRoot min-h-screen bg-gradient-to-br from-slate-900 via-purple-900/50 to-slate-900 p-6">
+  <div class="PageCategoryRoot min-h-screen bg-linear-to-br from-slate-900 via-purple-900/50 to-slate-900 p-6">
     <!-- 背景装饰 -->
     <div class="fixed inset-0 overflow-hidden pointer-events-none">
       <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl" />
@@ -9,7 +9,7 @@
     <div class="relative max-w-4xl mx-auto">
       <!-- Header -->
       <div class="text-center mb-12">
-        <h1 class="text-4xl mb-4 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+        <h1 class="text-4xl mb-4 bg-linear-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
           {{ pageInfo.title }}
         </h1>
         <p class="text-slate-300 text-lg">
@@ -25,7 +25,7 @@
         <div
           v-for="(subCategory, index) in subCategories"
           :key="`sub-category-${index}`"
-          :class="`relative p-8 rounded-2xl bg-gradient-to-br ${getSubCategoryConfig(subCategory).color} border-2 backdrop-blur-sm cursor-pointer hover:scale-105 transition-all duration-500 hover:shadow-2xl group`"
+          :class="`relative p-8 rounded-2xl bg-linear-to-br ${getSubCategoryConfig(subCategory).color} border-2 backdrop-blur-sm cursor-pointer hover:scale-105 transition-all duration-500 hover:shadow-2xl group`"
           @click="goToSubCategory(subCategory)"
         >
           <div class="flex flex-col items-center text-center">
@@ -58,25 +58,22 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import { gameDetailsData, categoryConfig, categoryRouterKey } from '~/composables/useGameData'
+import { gameDetailsData, categoryConfig } from '~/composables/useGameData'
 
-const route = useRoute()
 const router = useRouter()
+const category = computed(() => '跑团')
 
-// 当前分类
-const category = computed(() => {
-  const categorySlug = String(route.params.category || '')
-  return categoryRouterKey[categorySlug as keyof typeof categoryRouterKey] || categorySlug
-})
-
-// 子分类列表
 const subCategories = computed(() => {
   const mainCategory = category.value as keyof typeof gameDetailsData
   const categoryData = gameDetailsData[mainCategory]
   return categoryData ? Object.keys(categoryData) : []
 })
 
-// 页面信息
+const subRouteMap: Record<string, string> = {
+  COC: '/adventure/coc',
+  DND: '/adventure/dnd'
+}
+
 const pageInfo = computed(() => ({
   title: category.value || '游戏分类',
   description: (category.value && category.value in categoryConfig)
@@ -84,19 +81,14 @@ const pageInfo = computed(() => ({
     : '选择游戏分类'
 }))
 
-// Breadcrumb 导航
 const onBreadcrumb = (index: number) => {
   if (index === -1) router.push('/')
 }
 
-// 跳转子分类
 const goToSubCategory = (subCategory: string) => {
-  const categorySlug = String(route.params.category || '')
-  const subSlug = categoryRouterKey[subCategory as keyof typeof categoryRouterKey] || subCategory
-  router.push(`/${categorySlug}/${subSlug}`)
+  router.push(subRouteMap[subCategory] || '/adventure')
 }
 
-// 子分类样式配置
 const getSubCategoryConfig = (subCategory: string) => {
   if (subCategory in categoryConfig) {
     return categoryConfig[subCategory as keyof typeof categoryConfig]

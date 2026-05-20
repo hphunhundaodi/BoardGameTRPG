@@ -5,197 +5,178 @@ import {
 } from "./adventure"
 import type { GameDetails } from "@/components/AccordionGameList.vue";
 
-export const categoryRouterKey = {
-  桌游: "boardgame",
-  跑团: "adventure",
-  毛线: "filler",
-  轻策: "light",
-  中策: "medium",
-  重策: "heavy",
-  COC: "coc",
-  DND: "dnd",
-  boardgame: '桌游',
-  adventure: '跑团',
-  filler: '毛线',
-  light: '轻策',
-  medium: '中策',
-  heavy: '重策',
-  coc: 'COC',
-  dnd: 'DND',
-}
-
 // 游戏详细数据结构
 export const gameDetailsData = {
-  桌游: {
-    毛线: [
-      {
-        name: "阿瓦隆",
-        description: "一款社交推理游戏，玩家分为好人和坏人两个阵营，通过投票和任务来决定胜负。需要良好的观察力和推理能力。",
-        players: "5-10人",
-        duration: "30-45分钟",
-        difficulty: 2,
-        tags: ["推理", "社交", "角色扮演"]
-      },
-      {
-        name: "狼人杀",
-        description: "经典的多人社交推理游戏，村民需要找出隐藏的狼人，而狼人要消灭所有村民。考验玩家的逻辑推理和表演能力。",
-        players: "6-18人",
-        duration: "20-40分钟",
-        difficulty: 2,
-        tags: ["推理", "社交", "经典"]
-      },
-      {
-        name: "剧本杀：古宅惊魂",
-        description: "沉浸式角色扮演推理游戏，玩家需要在古老宅邸中寻找线索，揭开神秘案件的真相。",
-        players: "6-8人",
-        duration: "3-4h",
-        difficulty: 3,
-        tags: ["推理", "沉浸式", "悬疑"]
-      },
-      {
-        name: "谁是卧底",
-        description: "简单有趣的社交游戏，大部分玩家拿到相同词汇，少数卧底拿到相似词汇，通过描述找出卧底。",
-        players: "4-10人",
-        duration: "15-30分钟",
-        difficulty: 1,
-        tags: ["社交", "词汇", "轻松"]
-      },
-      {
-        name: "剧本杀：民国往事",
-        description: "以民国时期为背景的推理剧本，玩家扮演不同身份的角色，在错综复杂的关系中寻找真相。",
-        players: "6-7人",
-        duration: "4-5h",
-        difficulty: 4,
-        tags: ["推理", "历史", "情感"]
-      }
-    ],
-    轻策: [
-      {
-        name: "卡坦岛",
-        description: "经典的资源管理和建设游戏，玩家通过收集资源、建造道路和城镇来获得胜利点数。",
-        players: "3-4人",
-        duration: "60-90分钟",
-        difficulty: 2,
-        tags: ["资源管理", "建设", "经典"]
-      },
-      {
-        name: "车票之旅",
-        description: "铁路主题的策略游戏，玩家收集车票卡牌来连接不同城市的铁路线，完成目的地路线。",
-        players: "2-5人",
-        duration: "30-60分钟",
-        difficulty: 2,
-        tags: ["铁路", "收集", "路线规划"]
-      },
-      {
-        name: "拼布艺术",
-        description: "双人抽象策略游戏，玩家购买拼布块来填充自己的被子，获得最高分数。",
-        players: "2人",
-        duration: "15-30分钟",
-        difficulty: 2,
-        tags: ["拼图", "双人", "抽象"]
-      },
-      {
-        name: "七大奇迹",
-        description: "文明建设游戏，玩家发展古代文明，建造世界奇迹，通过多种途径获得胜利点数。",
-        players: "2-7人",
-        duration: "30-60分钟",
-        difficulty: 3,
-        tags: ["文明", "建设", "多元化"]
-      },
-      {
-        name: "璀璨宝石",
-        description: "宝石商人主题游戏，玩家收集宝石来购买发展卡，建立宝石帝国。",
-        players: "2-4人",
-        duration: "30-45分钟",
-        difficulty: 2,
-        tags: ["引擎构建", "宝石", "经济"]
-      }
-    ],
-    中策: [
-      {
-        name: "农场主",
-        description: "家庭农场经营游戏，玩家管理农场资源，养殖动物，种植作物，建设农场设施。",
-        players: "1-5人",
-        duration: "30-45分钟",
-        difficulty: 3,
-        tags: ["农场", "资源管理", "家庭"]
-      },
-      {
-        name: "港口城市",
-        description: "海洋贸易主题策略游戏，玩家建设港口城市，发展贸易路线，控制海洋资源。",
-        players: "2-4人",
-        duration: "90-120分钟",
-        difficulty: 3,
-        tags: ["贸易", "海洋", "城市建设"]
-      },
-      {
-        name: "翼展",
-        description: "鸟类主题的引擎构建游戏，玩家吸引不同鸟类到栖息地，建立强大的鸟类生态系统。",
-        players: "1-5人",
-        duration: "40-70分钟",
-        difficulty: 3,
-        tags: ["鸟类", "引擎构建", "自然"]
-      },
-      {
-        name: "马可波罗游记",
-        description: "以马可波罗的旅行为主题，玩家沿着丝绸之路进行贸易和探险。",
-        players: "2-4人",
-        duration: "60-100分钟",
-        difficulty: 4,
-        tags: ["探险", "贸易", "历史"]
-      },
-      {
-        name: "大西部铁路",
-        description: "铁路建设策略游戏，玩家在美国西部建设铁路网络，运输货物和乘客。",
-        players: "2-4人",
-        duration: "60-90分钟",
-        difficulty: 3,
-        tags: ["铁路", "西部", "网络建设"]
-      }
-    ],
-    重策: [
-      {
-        name: "盖亚计划",
-        description: "太空殖民主题的重度策略游戏，玩家控制外星种族在银河系中殖民和发展。",
-        players: "1-4人",
-        duration: "60-150分钟",
-        difficulty: 5,
-        tags: ["太空", "殖民", "重度策略"]
-      },
-      {
-        name: "文明帝国",
-        description: "史诗级文明发展游戏，玩家从古代发展到现代，管理文明的各个方面。",
-        players: "2-4人",
-        duration: "120-240分钟",
-        difficulty: 5,
-        tags: ["文明", "史诗", "发展"]
-      },
-      {
-        name: "黄昏帝国",
-        description: "太空歌剧风格的策略游戏，玩家控制星际帝国争夺银河系的霸权。",
-        players: "3-6人",
-        duration: "240-480分钟",
-        difficulty: 5,
-        tags: ["太空歌剧", "帝国", "史诗战争"]
-      },
-      {
-        name: "通过时代",
-        description: "文明发展游戏，玩家引导文明从古代发展到现代，做出重要的历史决策。",
-        players: "2-4人",
-        duration: "60-120分钟",
-        difficulty: 4,
-        tags: ["文明", "历史", "发展"]
-      },
-      {
-        name: "火星计划",
-        description: "火星殖民主题游戏，玩家作为公司在火星上建设基础设施，改造环境。",
-        players: "1-5人",
-        duration: "90-120分钟",
-        difficulty: 4,
-        tags: ["火星", "殖民", "环境改造"]
-      }
-    ]
-  },
+  // 桌游: {
+  //   毛线: [
+  //     {
+  //       name: "阿瓦隆",
+  //       description: "一款社交推理游戏，玩家分为好人和坏人两个阵营，通过投票和任务来决定胜负。需要良好的观察力和推理能力。",
+  //       players: "5-10人",
+  //       duration: "30-45分钟",
+  //       difficulty: 2,
+  //       tags: ["推理", "社交", "角色扮演"]
+  //     },
+  //     {
+  //       name: "狼人杀",
+  //       description: "经典的多人社交推理游戏，村民需要找出隐藏的狼人，而狼人要消灭所有村民。考验玩家的逻辑推理和表演能力。",
+  //       players: "6-18人",
+  //       duration: "20-40分钟",
+  //       difficulty: 2,
+  //       tags: ["推理", "社交", "经典"]
+  //     },
+  //     {
+  //       name: "剧本杀：古宅惊魂",
+  //       description: "沉浸式角色扮演推理游戏，玩家需要在古老宅邸中寻找线索，揭开神秘案件的真相。",
+  //       players: "6-8人",
+  //       duration: "3-4h",
+  //       difficulty: 3,
+  //       tags: ["推理", "沉浸式", "悬疑"]
+  //     },
+  //     {
+  //       name: "谁是卧底",
+  //       description: "简单有趣的社交游戏，大部分玩家拿到相同词汇，少数卧底拿到相似词汇，通过描述找出卧底。",
+  //       players: "4-10人",
+  //       duration: "15-30分钟",
+  //       difficulty: 1,
+  //       tags: ["社交", "词汇", "轻松"]
+  //     },
+  //     {
+  //       name: "剧本杀：民国往事",
+  //       description: "以民国时期为背景的推理剧本，玩家扮演不同身份的角色，在错综复杂的关系中寻找真相。",
+  //       players: "6-7人",
+  //       duration: "4-5h",
+  //       difficulty: 4,
+  //       tags: ["推理", "历史", "情感"]
+  //     }
+  //   ],
+  //   轻策: [
+  //     {
+  //       name: "卡坦岛",
+  //       description: "经典的资源管理和建设游戏，玩家通过收集资源、建造道路和城镇来获得胜利点数。",
+  //       players: "3-4人",
+  //       duration: "60-90分钟",
+  //       difficulty: 2,
+  //       tags: ["资源管理", "建设", "经典"]
+  //     },
+  //     {
+  //       name: "车票之旅",
+  //       description: "铁路主题的策略游戏，玩家收集车票卡牌来连接不同城市的铁路线，完成目的地路线。",
+  //       players: "2-5人",
+  //       duration: "30-60分钟",
+  //       difficulty: 2,
+  //       tags: ["铁路", "收集", "路线规划"]
+  //     },
+  //     {
+  //       name: "拼布艺术",
+  //       description: "双人抽象策略游戏，玩家购买拼布块来填充自己的被子，获得最高分数。",
+  //       players: "2人",
+  //       duration: "15-30分钟",
+  //       difficulty: 2,
+  //       tags: ["拼图", "双人", "抽象"]
+  //     },
+  //     {
+  //       name: "七大奇迹",
+  //       description: "文明建设游戏，玩家发展古代文明，建造世界奇迹，通过多种途径获得胜利点数。",
+  //       players: "2-7人",
+  //       duration: "30-60分钟",
+  //       difficulty: 3,
+  //       tags: ["文明", "建设", "多元化"]
+  //     },
+  //     {
+  //       name: "璀璨宝石",
+  //       description: "宝石商人主题游戏，玩家收集宝石来购买发展卡，建立宝石帝国。",
+  //       players: "2-4人",
+  //       duration: "30-45分钟",
+  //       difficulty: 2,
+  //       tags: ["引擎构建", "宝石", "经济"]
+  //     }
+  //   ],
+  //   中策: [
+  //     {
+  //       name: "农场主",
+  //       description: "家庭农场经营游戏，玩家管理农场资源，养殖动物，种植作物，建设农场设施。",
+  //       players: "1-5人",
+  //       duration: "30-45分钟",
+  //       difficulty: 3,
+  //       tags: ["农场", "资源管理", "家庭"]
+  //     },
+  //     {
+  //       name: "港口城市",
+  //       description: "海洋贸易主题策略游戏，玩家建设港口城市，发展贸易路线，控制海洋资源。",
+  //       players: "2-4人",
+  //       duration: "90-120分钟",
+  //       difficulty: 3,
+  //       tags: ["贸易", "海洋", "城市建设"]
+  //     },
+  //     {
+  //       name: "翼展",
+  //       description: "鸟类主题的引擎构建游戏，玩家吸引不同鸟类到栖息地，建立强大的鸟类生态系统。",
+  //       players: "1-5人",
+  //       duration: "40-70分钟",
+  //       difficulty: 3,
+  //       tags: ["鸟类", "引擎构建", "自然"]
+  //     },
+  //     {
+  //       name: "马可波罗游记",
+  //       description: "以马可波罗的旅行为主题，玩家沿着丝绸之路进行贸易和探险。",
+  //       players: "2-4人",
+  //       duration: "60-100分钟",
+  //       difficulty: 4,
+  //       tags: ["探险", "贸易", "历史"]
+  //     },
+  //     {
+  //       name: "大西部铁路",
+  //       description: "铁路建设策略游戏，玩家在美国西部建设铁路网络，运输货物和乘客。",
+  //       players: "2-4人",
+  //       duration: "60-90分钟",
+  //       difficulty: 3,
+  //       tags: ["铁路", "西部", "网络建设"]
+  //     }
+  //   ],
+  //   重策: [
+  //     {
+  //       name: "盖亚计划",
+  //       description: "太空殖民主题的重度策略游戏，玩家控制外星种族在银河系中殖民和发展。",
+  //       players: "1-4人",
+  //       duration: "60-150分钟",
+  //       difficulty: 5,
+  //       tags: ["太空", "殖民", "重度策略"]
+  //     },
+  //     {
+  //       name: "文明帝国",
+  //       description: "史诗级文明发展游戏，玩家从古代发展到现代，管理文明的各个方面。",
+  //       players: "2-4人",
+  //       duration: "120-240分钟",
+  //       difficulty: 5,
+  //       tags: ["文明", "史诗", "发展"]
+  //     },
+  //     {
+  //       name: "黄昏帝国",
+  //       description: "太空歌剧风格的策略游戏，玩家控制星际帝国争夺银河系的霸权。",
+  //       players: "3-6人",
+  //       duration: "240-480分钟",
+  //       difficulty: 5,
+  //       tags: ["太空歌剧", "帝国", "史诗战争"]
+  //     },
+  //     {
+  //       name: "通过时代",
+  //       description: "文明发展游戏，玩家引导文明从古代发展到现代，做出重要的历史决策。",
+  //       players: "2-4人",
+  //       duration: "60-120分钟",
+  //       difficulty: 4,
+  //       tags: ["文明", "历史", "发展"]
+  //     },
+  //     {
+  //       name: "火星计划",
+  //       description: "火星殖民主题游戏，玩家作为公司在火星上建设基础设施，改造环境。",
+  //       players: "1-5人",
+  //       duration: "90-120分钟",
+  //       difficulty: 4,
+  //       tags: ["火星", "殖民", "环境改造"]
+  //     }
+  //   ]
+  // },
   跑团: {
     COC: [
       ...CocAllModules,
@@ -208,12 +189,12 @@ export const gameDetailsData = {
 
 // 分类配置
 export const categoryConfig = {
-  桌游: {
-    icon: "🎲",
-    color: "from-emerald-900/20 to-teal-900/20 border-emerald-500/30",
-    description: "经典桌面游戏体验",
-    bgGradient: "from-emerald-900 via-teal-900/50 to-slate-900"
-  },
+  // 桌游: {
+  //   icon: "🎲",
+  //   color: "from-emerald-900/20 to-teal-900/20 border-emerald-500/30",
+  //   description: "经典桌面游戏体验",
+  //   bgGradient: "from-emerald-900 via-teal-900/50 to-slate-900"
+  // },
   跑团: {
     icon: "🎭",
     color: "from-purple-900/20 to-indigo-900/20 border-purple-500/30",
